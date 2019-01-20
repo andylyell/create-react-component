@@ -1,9 +1,26 @@
-body {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
+=======
+  box-sizing: inherit; }
+
+*,
+*::before,
+*::after {
+  font-family: 'IBM Plex Sans', sans-serif; }
+
+.test {
+  background-color: #efefef; }
+
+.button {
+  background-color: #05D65A; }
+>>>>>>> andy-start
