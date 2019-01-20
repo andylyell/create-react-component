@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import Button from './components/UI/Button/Button';
+import Layout from './components/Layout/Layout';
+import ControlPanel from './components/ControlPanel/ControlPanel';
+import OutputCodeBlock from './components/OutputCodeBlock/OutputCodeBlock';
+// import Button from './components/UI/Button/Button';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1 className="test">Create react component</h1>
-        <Button></Button>
-      </div>
+      <Layout>
+        <ControlPanel/>
+        <OutputCodeBlock/>
+      </Layout>
     );
   }
 }

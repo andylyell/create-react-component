@@ -3,7 +3,9 @@
 @import 'styles/fonts';
 @import 'styles/variables';
 
-// Components
-
+// Containers
 @import 'app';
+@import 'components/Layout/layout';
+
+// Components
 @import 'components/UI/Button/button';
