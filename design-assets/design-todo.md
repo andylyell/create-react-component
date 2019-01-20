@@ -21,11 +21,11 @@
 - Button (types[primary, seconday])
 - Layout
 - Toggle
-- Switch UI Component
+- Switch Toggle
 - Code Block
+- Control Panel
 - About Modal
-- Input
-- MenuBlock (header(options))
+- User Input
 ---
 
 ### React component model
