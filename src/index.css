@@ -13,5 +13,9 @@
 .test {
   background-color: #efefef; }
 
+.layout--logo {
+  width: 60px;
+  height: 60px; }
+
 .button {
   background-color: #05D65A; }
