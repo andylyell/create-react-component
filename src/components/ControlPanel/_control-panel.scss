@@ -1,0 +1,10 @@
+.control{
+    &__button-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button-block{
+        display: flex;
+    }
+}

@@ -1,0 +1,15 @@
+.nav{
+    padding: 14px 40px;
+    border-bottom: 1px solid $grey--2;
+    display: flex;
+    justify-content: space-between;
+
+    &__title{
+        display: flex;
+        align-items: center;
+
+        &__icon{
+            margin-right: 10px;
+        }
+    }
+}

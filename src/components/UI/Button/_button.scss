@@ -1,3 +1,27 @@
 .button{
-    background-color: $green-primary;
+    padding: 12px 18px;
+    border-radius: $border--radius;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child){
+        margin-right: 16px;
+    }
+
+    &__primary{
+        background-color: $grey--1;
+    }
+
+    &__secondary{
+        background-color: $blue--1;
+        color: white;
+    }
+
+    &__tertiary{
+        color: $grey--3;
+    }
+
+    &__icon{
+        margin-right: 10px;
+    }
 }

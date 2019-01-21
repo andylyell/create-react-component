@@ -1,20 +1,22 @@
 import React from 'react';
-import Button from '../UI/Button/Button';
-import logo from '../../assets/images/crc-icon.svg';
+import Header from '../Header/Header';
+import InfoBlock from '../InfoBlock/InfoBlock';
+import ControlPanel from '../ControlPanel/ControlPanel';
+import OutputCodeBlock from '../OutputCodeBlock/OutputCodeBlock';
+
+
 
 const Layout = (props) => {
     return (
         <>
-            <div>
-                <p>Image</p>
-                <img src={logo} className="layout--logo" alt="Create react app icon"/>
-                <h1>Create react component</h1>
-                <p>Use the menu to create your react component</p>
-                <Button/>
-                <Button/>
+            <Header/>
+            <InfoBlock/>
+            <div className="layout__control">
+                <div className="layout__control--container">
+                    <ControlPanel/>
+                    <OutputCodeBlock/>
+                </div>
             </div>
-            {props.children}
-            <p>2019 © Sam Cook + Andy Lyell</p>
         </>
         
     );
