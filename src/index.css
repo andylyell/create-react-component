@@ -68,12 +68,18 @@
 .button__primary {
   background-color: #F5F5F5; }
 
+.button__primary .button__icon {
+  fill: black; }
+
 .button__secondary {
   background-color: #008CE9;
   color: white; }
 
 .button__tertiary {
   color: #777777; }
+
+.button__tertiary .button__icon {
+  fill: #777777; }
 
 .button__icon {
   margin-right: 10px; }
