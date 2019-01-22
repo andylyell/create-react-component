@@ -1,11 +1,19 @@
 .control{
     &__button-container{
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
     }
 
-    &__button-block{
+    &__input-container{
+        width: 100%;
         display: flex;
+        align-items: center;
+
+        &--input{
+            width: 70%;
+        }
+        &--radio{
+            width: 30%;
+        }
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../UI/Button/Button';
 import InputField from '../UI/InputField/InputField';
+import ChoiceToggle from '../UI/ChoiceToggle/ChoiceToggle';
 
 function hasBeenClicked(e) {
     console.log(e.target);
@@ -12,13 +13,18 @@ const ControlPanel = (props) => {
     return (
         <>
             <div className="control__button-container">
-                <div className="control__button-block">
-                    <Button clicked={hasBeenClicked} btnType="secondary">Simple</Button>
-                    <Button clicked={hasBeenClicked} btnType="quaternary">Advanced</Button>
-                </div>
-                <Button clicked={hasBeenClicked} icon="reset" btnType="tertiary">Reset component</Button>
+                <Button clicked={hasBeenClicked} btnType="secondary" icon="clipboard">Copy to clipboard</Button>
+                <Button clicked={hasBeenClicked} btnType="quaternary" icon="reset">Reset</Button>
             </div>
-            <InputField/>
+            <div className="control__input-container">
+                <div className="control__input-container--input">
+                    <InputField/>
+                </div>
+                <div className="control__input-container--radio">
+                    <ChoiceToggle/>
+                </div>
+            </div>
+            
         </>
     );
 }

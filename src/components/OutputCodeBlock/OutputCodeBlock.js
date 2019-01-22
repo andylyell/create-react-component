@@ -1,10 +1,16 @@
 import React from 'react';
-import Button from '../UI/Button/Button';
 
 const OutputCodeBlock = (props) => {
     return (
         <div className="code-block">
-            <Button icon='clipboard' btnType="quinternary">Copy to Clipboard</Button>
+            <div className="code-block__button-container">
+                <div className="code-block__buttons">
+                    <div className="code-block__button code-block__button--red"></div>
+                    <div className="code-block__button code-block__button--yellow"></div>
+                    <div className="code-block__button code-block__button--green"></div>
+                </div>
+            </div>
+            
             <pre>
                 <code>
                     Import React from 'react';
