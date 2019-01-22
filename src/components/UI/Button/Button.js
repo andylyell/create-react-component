@@ -10,6 +10,8 @@ const Button = (props) => {
         case('primary'): btnClasses = ['button', 'button__primary'].join(' '); break;
         case('secondary'): btnClasses = ['button', 'button__secondary'].join(' '); break;
         case('tertiary'): btnClasses = ['button', 'button__tertiary'].join(' '); break;
+        case('quaternary'): btnClasses = ['button', 'button__quaternary'].join(' '); break;
+        case('quinternary'): btnClasses = ['button', 'button__quinternary'].join(' '); break;
         default: btnClasses = ['button', 'button__primary'].join(' '); break;
     }
 
@@ -28,13 +30,13 @@ const Button = (props) => {
 
     if(props.icon){
         btn = 
-        <div className={btnClasses}>
+        <div onClick={props.clicked} className={btnClasses}>
                 <div className='button__icon'>{btnIcon}</div>
                 {/* <img className="button__icon" src={btnIcon} alt=""/> */}
                 <p>{props.children}</p>
         </div>;
     } else {
-        btn = <div className={btnClasses}><p>{props.children}</p></div>;
+        btn = <div onClick={props.clicked} className={btnClasses}><p>{props.children}</p></div>;
     }
 
     return (

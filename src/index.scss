@@ -3,7 +3,7 @@
 @import 'styles/fonts';
 @import 'styles/variables';
 
-// Containers
+// Components
 @import 'app';
 @import 'components/Layout/layout';
 @import 'components/Header/header';
@@ -11,5 +11,6 @@
 @import 'components/ControlPanel/control-panel';
 @import 'components/OutputCodeBlock/output-code-block';
 
-// Components
+// UI Components
 @import 'components/UI/Button/button'; 
+@import 'components/UI/InputField/input-field';

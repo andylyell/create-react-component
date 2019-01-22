@@ -4,8 +4,6 @@ import InfoBlock from '../InfoBlock/InfoBlock';
 import ControlPanel from '../ControlPanel/ControlPanel';
 import OutputCodeBlock from '../OutputCodeBlock/OutputCodeBlock';
 
-
-
 const Layout = (props) => {
     return (
         <>

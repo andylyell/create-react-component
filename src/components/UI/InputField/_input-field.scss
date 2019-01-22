@@ -1,0 +1,20 @@
+.input-field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+
+    &__label{
+        margin-bottom: 8px;
+    }
+
+    &__input{
+        padding: 14px 20px;
+        border-radius: $border--radius;
+        border: 1px solid $grey--4;
+        font-size: 16px;
+
+        &::placeholder{
+            color: #c5c5c5;
+        }
+    }
+}
