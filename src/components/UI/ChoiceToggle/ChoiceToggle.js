@@ -2,10 +2,24 @@ import React from 'react';
 
 const ChoiceToggle = (props) => {
     return (
-        <form className="choice-toggle">
-            <input className="choice-toggle__input" type="radio" name="type" value="function" defaultChecked/> <span className="choice-toggle__input--text">Function</span>
-            <input className="choice-toggle__input" type="radio" name="type" value="class"/> <span className="choice-toggle__input--text">Class</span>
-        </form>);
+        <div className="choice-toggle__container">
+            <label className="container"> 
+                <span className="label">Function</span>
+                <input type="radio" name="radio" defaultChecked/>
+                <span className="checkmark"></span>
+            </label>
+            <label className="container"> 
+                <span className="label">Class</span>
+                <input type="radio" name="radio"/>
+                <span className="checkmark"></span>
+            </label>
+        </div>
+        );
 };
 
 export default ChoiceToggle;
+
+// <form className="choice-toggle">
+        //     <input className="choice-toggle__input" type="radio" name="type" value="function" defaultChecked/> <span className="choice-toggle__input--text">Function</span>
+        //     <input className="choice-toggle__input" type="radio" name="type" value="class"/> <span className="choice-toggle__input--text">Class</span>
+        // </form>);

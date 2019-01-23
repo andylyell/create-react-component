@@ -60,10 +60,10 @@
   align-items: center; }
 
 .control__input-container--input {
-  width: 70%; }
+  width: 65%; }
 
 .control__input-container--radio {
-  width: 30%; }
+  width: 35%; }
 
 .code-block {
   background: linear-gradient(to bottom, #3f3f3f 0%, #383838 33%, #262626 100%);
@@ -163,7 +163,8 @@
 .input-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  margin-right: 20px; }
 
 .input-field__label {
   margin-bottom: 8px; }
@@ -176,3 +177,86 @@
 
 .input-field__input::placeholder {
   color: #c5c5c5; }
+
+.choice-toggle__container {
+  display: flex; }
+
+.choice-toggle__option {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none; }
+
+.choice-toggle__option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0; }
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none; }
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0; }
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  transition: .3s; }
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+  border: 1px solid #2196F3; }
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+  border: 1px solid #2196F3; }
+
+.container:hover .label {
+  color: hotpink; }
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: hotpink; }
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block; }
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: 6px;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2196F3; }
