@@ -53,33 +53,26 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 20px;
-    width: 20px;
-    background-color: #eee;
+    height: 24px;
+    width: 24px;
+    background-color: white;
     border: 1px solid #ccc;
     border-radius: 50%;
     transition: .3s;
   }
+
+  .label{
+    margin-right: 20px;
+  }
   
   /* On mouse-over, add a grey background color */
   .container:hover input ~ .checkmark {
-    background-color: #ccc;
     border: 1px solid #2196F3;
-  }
-
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-    border: 1px solid #2196F3;
-  }
-
-  .container:hover .label {
-    color: hotpink;
   }
   
   /* When the radio button is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: hotpink;
+  .container input:checked ~ .label {
+    color: #2196F3;
   }
   
   /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -96,10 +89,10 @@
   
   /* Style the indicator (dot/circle) */
   .container .checkmark:after {
-    top: 6px;
-    left: 6px;
-    width: 8px;
-    height: 8px;
+    top: 5px;
+    left: 5px;
+    width: 14px;
+    height: 14px;
     border-radius: 50%;
     background: #2196F3;
   }

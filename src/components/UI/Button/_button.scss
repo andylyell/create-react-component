@@ -30,6 +30,24 @@
         }
     }
 
+    &__primary--dark{
+        background-color: $lgrey--1;
+        color: white;
+
+        &:hover{
+            box-shadow: 0px 4px 20px -5px rgba(68, 68, 68, 0.753);
+            transform: translateY(-2px);
+        }
+
+        &:active{
+            transform: translateY(1px);
+        }
+
+        & .button__icon{
+            fill: white;
+        }
+    }
+
     &__secondary{
         background-color: $blue--1;
         color: white;
@@ -38,7 +56,16 @@
         }
     }
 
+    &__secondary--dark{
+        background-color: salmon;
+        color: white;
+        & .button__icon{
+            fill: white;
+        }
+    }
+
     &__tertiary{
+        background-color: #61636A;
         color: $grey--3;
 
         & .button__icon{
@@ -46,25 +73,12 @@
         }
     }
 
-    &__quaternary{
-        background-color: $grey--4;
+    &__tertiary--dark{
+        background-color: palegreen;
         color: $grey--3;
+
         & .button__icon{
             fill: $grey--3;
-        }
-    }
-
-    &__quinternary{
-        position: absolute;
-        top: 26px;
-        right: 10px;
-        display: flex;
-        background-color: transparent;
-        border: 1px solid $grey--5;
-        color: $grey--5;
-        
-        & .button__icon{
-            fill: $grey--5;
         }
     }
 

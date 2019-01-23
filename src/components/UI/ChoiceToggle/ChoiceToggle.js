@@ -4,13 +4,13 @@ const ChoiceToggle = (props) => {
     return (
         <div className="choice-toggle__container">
             <label className="container"> 
-                <span className="label">Function</span>
                 <input type="radio" name="radio" defaultChecked/>
+                <span className="label">Function</span>
                 <span className="checkmark"></span>
             </label>
             <label className="container"> 
-                <span className="label">Class</span>
                 <input type="radio" name="radio"/>
+                <span className="label">Class</span>
                 <span className="checkmark"></span>
             </label>
         </div>

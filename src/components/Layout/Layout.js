@@ -7,34 +7,35 @@ import OutputCodeBlock from '../OutputCodeBlock/OutputCodeBlock';
 class Layout extends React.Component {
 
     state = {
-        test: true
+        colorMode: true
     }
 
     componentDidMount(){
-        console.log('[ComponentDidMount] ' + this.state.test);
+        console.log('[ComponentDidMount] ' + this.state.colorMode);
     }
 
     componentDidUpdate(){
-        console.log('[ComponentDidUpdate] ' + this.state.test);
+        console.log('[ComponentDidUpdate] ' + this.state.colorMode);
     }
 
     colorSwitch = () => {
         this.setState((prevState) => {
-            return {test: !prevState.test}
+            return {colorMode: !prevState.colorMode}
           });
     }
 
     render(){
         return (
             <>
-                <Header colorSwitch={this.colorSwitch}/>
+                <Header colorSwitch={this.colorSwitch} colorMode={this.state.colorMode}/>
                 <InfoBlock/>
                 <div className="layout__control">
                     <div className="layout__control--container">
                         <ControlPanel/>
-                        <OutputCodeBlock/>
+                        <OutputCodeBlock colorMode={this.state.colorMode}/>
                     </div>
                 </div>
+                
             </>  
         );
     };

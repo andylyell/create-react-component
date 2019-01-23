@@ -20,7 +20,7 @@
   height: 100%; }
 
 .layout__control--container {
-  width: 550px; }
+  width: 650px; }
 
 .nav {
   padding: 14px 40px;
@@ -42,13 +42,13 @@
   border-bottom: 1px solid #efefef; }
 
 .info-block__container {
-  max-width: 550px; }
+  max-width: 650px; }
 
 .info-block__title {
   margin-bottom: 20px; }
 
 .info-block__text {
-  color: #777777; }
+  color: #3A3A3F; }
 
 .control__button-container {
   display: flex;
@@ -67,22 +67,26 @@
 
 .code-block {
   background: linear-gradient(to bottom, #3f3f3f 0%, #383838 33%, #262626 100%);
-  padding: 50px;
+  padding: 10px;
   color: white;
   border-radius: 12px;
   box-shadow: 0px 0px 50px -10px #787878;
-  position: relative;
-  height: 180px; }
-
-.code-block__buttons {
-  display: flex; }
+  position: relative; }
 
 .code-block__button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px; }
+
+.code-block__buttons-effect {
+  display: flex; }
+
+.code-block__button-effect--container {
   position: absolute;
   top: 15px;
   left: 15px; }
 
-.code-block__button {
+.code-block__button-effect {
   margin-right: 6px;
   display: block;
   width: 10px;
@@ -90,14 +94,18 @@
   background-color: #efefef;
   border-radius: 5px; }
 
-.code-block__button--red {
+.code-block__button-effect--red {
   background-color: #ff2441; }
 
-.code-block__button--yellow {
+.code-block__button-effect--yellow {
   background-color: #ffde24; }
 
-.code-block__button--green {
+.code-block__button-effect--green {
   background-color: #00c732; }
+
+pre {
+  padding-left: 20px;
+  margin-bottom: 40px; }
 
 .button {
   padding: 12px 18px;
@@ -125,6 +133,20 @@
 .button__primary .button__icon {
   fill: black; }
 
+.button__primary--dark {
+  background-color: #272727;
+  color: white; }
+
+.button__primary--dark:hover {
+  box-shadow: 0px 4px 20px -5px rgba(68, 68, 68, 0.753);
+  transform: translateY(-2px); }
+
+.button__primary--dark:active {
+  transform: translateY(1px); }
+
+.button__primary--dark .button__icon {
+  fill: white; }
+
 .button__secondary {
   background-color: #008CE9;
   color: white; }
@@ -132,30 +154,26 @@
 .button__secondary .button__icon {
   fill: white; }
 
+.button__secondary--dark {
+  background-color: salmon;
+  color: white; }
+
+.button__secondary--dark .button__icon {
+  fill: white; }
+
 .button__tertiary {
-  color: #777777; }
+  background-color: #61636A;
+  color: #3A3A3F; }
 
 .button__tertiary .button__icon {
-  fill: #777777; }
+  fill: #3A3A3F; }
 
-.button__quaternary {
-  background-color: #dadada;
-  color: #777777; }
+.button__tertiary--dark {
+  background-color: palegreen;
+  color: #3A3A3F; }
 
-.button__quaternary .button__icon {
-  fill: #777777; }
-
-.button__quinternary {
-  position: absolute;
-  top: 26px;
-  right: 10px;
-  display: flex;
-  background-color: transparent;
-  border: 1px solid #8B8D91;
-  color: #8B8D91; }
-
-.button__quinternary .button__icon {
-  fill: #8B8D91; }
+.button__tertiary--dark .button__icon {
+  fill: #3A3A3F; }
 
 .button__icon {
   margin-right: 10px; }
@@ -218,29 +236,23 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
+  height: 24px;
+  width: 24px;
+  background-color: white;
   border: 1px solid #ccc;
   border-radius: 50%;
   transition: .3s; }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-  border: 1px solid #2196F3; }
+.label {
+  margin-right: 20px; }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-  background-color: #ccc;
   border: 1px solid #2196F3; }
-
-.container:hover .label {
-  color: hotpink; }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: hotpink; }
+.container input:checked ~ .label {
+  color: #2196F3; }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
 .checkmark:after {
@@ -254,9 +266,9 @@
 
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
-  top: 6px;
-  left: 6px;
-  width: 8px;
-  height: 8px;
+  top: 5px;
+  left: 5px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   background: #2196F3; }

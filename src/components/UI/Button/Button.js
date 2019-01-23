@@ -6,13 +6,20 @@ const Button = (props) => {
     let btnIcon = null;
     let btnClasses = null;
 
-    switch(props.btnType){
-        case('primary'): btnClasses = ['button', 'button__primary'].join(' '); break;
-        case('secondary'): btnClasses = ['button', 'button__secondary'].join(' '); break;
-        case('tertiary'): btnClasses = ['button', 'button__tertiary'].join(' '); break;
-        case('quaternary'): btnClasses = ['button', 'button__quaternary'].join(' '); break;
-        case('quinternary'): btnClasses = ['button', 'button__quinternary'].join(' '); break;
-        default: btnClasses = ['button', 'button__primary'].join(' '); break;
+    if(props.colorMode){
+        switch(props.btnType){
+            case('primary'): btnClasses = ['button', 'button__primary'].join(' '); break;
+            case('secondary'): btnClasses = ['button', 'button__secondary'].join(' '); break;
+            case('tertiary'): btnClasses = ['button', 'button__tertiary'].join(' '); break;
+            default: btnClasses = ['button', 'button__primary'].join(' '); break;
+        }
+    } else {
+        switch(props.btnType){
+            case('primary'): btnClasses = ['button', 'button__primary--dark'].join(' '); break;
+            case('secondary'): btnClasses = ['button', 'button__secondary--dark'].join(' '); break;
+            case('tertiary'): btnClasses = ['button', 'button__tertiary--dark'].join(' '); break;
+            default: btnClasses = ['button', 'button__primary--dark'].join(' '); break;
+        }
     }
 
     switch(props.icon){

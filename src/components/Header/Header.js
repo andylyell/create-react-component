@@ -14,7 +14,7 @@ const Header = (props) => {
                 <img className="nav__title__icon" src={CrcIcon} alt=""/>
                 <p>Create react component</p>
             </div>
-            <Button clicked={props.colorSwitch} icon="lightbulb" btnType="primary">Dark Mode</Button>
+            <Button clicked={props.colorSwitch} icon="lightbulb" btnType="primary" colorMode={props.colorMode}>Dark Mode</Button>
         </nav>
     );
 };
