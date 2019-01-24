@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     transition: .3s;
+    
 
     &:hover{
         cursor: pointer;
@@ -14,6 +15,7 @@
     }
 
     &__primary{
+        min-width: 120px;
         background-color: $grey--1;
 
         &:hover{
@@ -31,6 +33,7 @@
     }
 
     &__primary--dark{
+        min-width: 120px;
         background-color: $lgrey--1;
         color: white;
 

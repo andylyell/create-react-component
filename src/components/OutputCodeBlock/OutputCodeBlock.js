@@ -26,7 +26,7 @@ const OutputCodeBlock = (props) => {
             <pre>
                 <code>
                     Import React from 'react';<br/><br/>
-                    //Your  component here <br/><br/>
+                    // Your  component here <br/><br/>
                     export default Component;
                 </code>
             </pre> 

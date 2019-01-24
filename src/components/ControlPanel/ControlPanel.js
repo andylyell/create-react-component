@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '../UI/Button/Button';
 import InputField from '../UI/InputField/InputField';
 import ChoiceToggle from '../UI/ChoiceToggle/ChoiceToggle';
 

@@ -5,7 +5,6 @@
 $button-radius: 10px;
 
 .code-block{
-    // background-color: $code--black;
     background: linear-gradient(to bottom, #3f3f3f 0%,#383838 33%,#262626 100%);
     padding: 10px;
     color: white;
@@ -46,17 +45,9 @@ $button-radius: 10px;
             background-color: #00c732;
         }
     }
-
-    &__code{
-
-    }
 }
 
 pre{
     padding-left: 20px;
     margin-bottom: 40px;
-}
-
-code{
-    
 }

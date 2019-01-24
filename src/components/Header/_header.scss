@@ -1,15 +1,38 @@
-.nav{
-    padding: 14px 40px;
-    border-bottom: 1px solid $grey--2;
+%nav-extend{
     display: flex;
     justify-content: space-between;
+    padding: 14px 40px;
+    transition: .3s;
+}
+
+
+.nav{
+    @extend %nav-extend;
+    border-bottom: 1px solid $grey--2;
 
     &__title{
         display: flex;
         align-items: center;
 
-        &__icon{
+        & svg{
             margin-right: 10px;
+        }
+    }
+
+    &--dark{
+        @extend %nav-extend;
+        background-color: black;
+        border-bottom: 1px solid #424242;
+    }
+
+    &__title--dark{
+        display: flex;
+        align-items: center;
+        color: white;
+
+        & svg{
+            margin-right: 10px;
+            fill: white; 
         }
     }
 }

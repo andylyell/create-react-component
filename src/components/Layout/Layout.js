@@ -25,14 +25,27 @@ class Layout extends React.Component {
     }
 
     render(){
+
+        const styleName = "layout__control";
+        let layoutControlStyle = null;
+
+        if(this.state.colorMode){
+            layoutControlStyle = styleName;
+        } else {
+            layoutControlStyle = styleName + "--dark";
+        }
+
+
         return (
             <>
-                <Header colorSwitch={this.colorSwitch} colorMode={this.state.colorMode}/>
-                <InfoBlock/>
-                <div className="layout__control">
-                    <div className="layout__control--container">
-                        <ControlPanel/>
-                        <OutputCodeBlock colorMode={this.state.colorMode}/>
+                <div className="layout">
+                    <Header colorSwitch={this.colorSwitch} colorMode={this.state.colorMode}/>
+                    <InfoBlock colorMode={this.state.colorMode}/>
+                    <div className={layoutControlStyle}>
+                        <div className="layout__control--container">
+                            <ControlPanel colorMode={this.state.colorMode}/>
+                            <OutputCodeBlock colorMode={this.state.colorMode}/>
+                        </div>
                     </div>
                 </div>
                 

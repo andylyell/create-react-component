@@ -1,14 +1,27 @@
+%layout-control-extend{
+    flex-grow: 1;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center; 
+}
+
 .layout{
-    
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
     &__control{
+        @extend %layout-control-extend;
         background-color: $lb--1;
-        padding: 50px 0;
-        display: flex;
-        justify-content: center;
-        height: 100%;
 
         &--container{
             width: 650px;
+        }
+
+        &--dark{
+            @extend %layout-control-extend;
+            background-color: #fddede;
         }
     }
 }
