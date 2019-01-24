@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../UI/Button/Button';
+import { addDarkClass, removeDarkClass } from '../../helpers/helpers';
 
 // function hasBeenClicked(e) {
 //     console.log(e.target);
@@ -9,18 +10,18 @@ import Button from '../UI/Button/Button';
 const Header = (props) => {
 
 
-    const styleName = "nav";
-    let navStyle = null;
-    let navTitleStyle = null;
+    // const styleName = "nav";
+    let navStyle = "nav";
+    let navTitleStyle = "nav__title";
     let buttonText = null;
 
     if(props.colorMode){
-        navStyle = styleName;
-        navTitleStyle = styleName + "__title";
+        navStyle = removeDarkClass(navStyle);
+        navTitleStyle = removeDarkClass(navTitleStyle);
         buttonText = "Dark Mode"
     } else {
-        navStyle = styleName + "--dark";
-        navTitleStyle = styleName + "__title--dark";
+        navStyle = addDarkClass(navStyle);
+        navTitleStyle = addDarkClass(navTitleStyle);
         buttonText = "Light Mode"
     }  
 

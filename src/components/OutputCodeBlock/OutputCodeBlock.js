@@ -24,9 +24,9 @@ const OutputCodeBlock = (props) => {
             </div>
             
             <pre>
-                <code>
+                <code className="code-block__code">
                     Import React from 'react';<br/><br/>
-                    // Your  component here <br/><br/>
+                    <span className="code-block__code-comment">Your  component here </span><br/><br/>
                     export default Component;
                 </code>
             </pre> 

@@ -15,7 +15,7 @@ $button-radius: 10px;
     &__button-container{
         display: flex;
         justify-content: flex-end;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     &__buttons-effect{
@@ -44,6 +44,17 @@ $button-radius: 10px;
         &--green{
             background-color: #00c732;
         }
+    }
+
+    &__code{
+        font-family: monospace;
+        font-size: 16px;
+        color: #dbdbdb;
+    }
+
+    &__code-comment{
+        font-family: monospace;
+        color: #838383;
     }
 }
 

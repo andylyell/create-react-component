@@ -3,11 +3,13 @@ import Header from '../Header/Header';
 import InfoBlock from '../InfoBlock/InfoBlock';
 import ControlPanel from '../ControlPanel/ControlPanel';
 import OutputCodeBlock from '../OutputCodeBlock/OutputCodeBlock';
+import { addDarkClass, removeDarkClass } from '../../helpers/helpers';
 
 class Layout extends React.Component {
 
     state = {
-        colorMode: true
+        colorMode: true,
+        componentIsClass: true
     }
 
     componentDidMount(){
@@ -26,13 +28,11 @@ class Layout extends React.Component {
 
     render(){
 
-        const styleName = "layout__control";
-        let layoutControlStyle = null;
-
+        let layoutControlStyle = "layout__control";
         if(this.state.colorMode){
-            layoutControlStyle = styleName;
+            layoutControlStyle = removeDarkClass(layoutControlStyle);
         } else {
-            layoutControlStyle = styleName + "--dark";
+            layoutControlStyle = addDarkClass(layoutControlStyle);
         }
 
 
