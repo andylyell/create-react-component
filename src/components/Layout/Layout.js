@@ -9,16 +9,32 @@ class Layout extends React.Component {
 
     state = {
         colorMode: true,
-        componentIsClass: true
+        componentIsClass: true,
+        inputValue: ''
     }
 
     componentDidMount(){
-        console.log('[ComponentDidMount] ' + this.state.colorMode);
+        // console.log('[ComponentDidMount] ' + this.state.colorMode);
     }
 
     componentDidUpdate(){
-        console.log('[ComponentDidUpdate] ' + this.state.colorMode);
+        // console.log('[ComponentDidUpdate] ' + this.state.colorMode);
+        // console.log(this.state.inputValue);
     }
+
+    inputChangedHandler = (e) => {
+        this.setState({
+            inputValue: e.target.value
+        });
+    };
+
+    resetInput = () => {
+        this.setState({
+            inputValue: ''
+        });
+    }
+
+
 
     colorSwitch = () => {
         this.setState((prevState) => {
@@ -43,8 +59,8 @@ class Layout extends React.Component {
                     <InfoBlock colorMode={this.state.colorMode}/>
                     <div className={layoutControlStyle}>
                         <div className="layout__control--container">
-                            <ControlPanel colorMode={this.state.colorMode}/>
-                            <OutputCodeBlock colorMode={this.state.colorMode}/>
+                            <ControlPanel colorMode={this.state.colorMode} inputChange={this.inputChangedHandler} inputValue={this.state.inputValue}/>
+                            <OutputCodeBlock colorMode={this.state.colorMode} inputValue={this.state.inputValue} resetInput={this.resetInput}/>
                         </div>
                     </div>
                 </div>

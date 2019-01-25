@@ -56,6 +56,11 @@ $button-radius: 10px;
         font-family: monospace;
         color: #838383;
     }
+
+    &__component-name{
+        font-style: italic;
+        color: #838383;
+    }
 }
 
 pre{

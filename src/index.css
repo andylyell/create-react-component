@@ -156,6 +156,10 @@ html, body, #root {
   font-family: monospace;
   color: #838383; }
 
+.code-block__component-name {
+  font-style: italic;
+  color: #838383; }
+
 pre {
   padding-left: 20px;
   margin-bottom: 40px; }
@@ -247,6 +251,10 @@ pre {
   border-radius: 8px;
   border: 1px solid #dadada;
   font-size: 16px; }
+
+.input-field__input:focus {
+  outline: none;
+  border: 1px solid #008CE9; }
 
 .input-field__input::placeholder {
   color: #c5c5c5; }

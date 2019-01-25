@@ -13,7 +13,7 @@ const ControlPanel = (props) => {
             </div> */}
             <div className="control__input-container">
                 <div className="control__input-container--input">
-                    <InputField/>
+                    <InputField inputChange={props.inputChange} inputValue={props.inputValue}/>
                 </div>
                 <div className="control__input-container--radio">
                     <ChoiceToggle/>
