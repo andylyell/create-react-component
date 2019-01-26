@@ -74,4 +74,6 @@ $button-radius: 10px;
 pre{
     padding-left: 20px;
     margin-bottom: 40px;
+    white-space: pre-wrap;
+    overflow-x: auto;
 }

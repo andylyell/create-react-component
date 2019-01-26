@@ -1,27 +1,48 @@
 import React from 'react';
 import Button from '../UI/Button/Button';
 
-function hasBeenClicked(e) {
-    console.log(e.target);
-    console.log('I have been clicked');
-};
-
 const OutputCodeBlock = (props) => {
 
-    let componentName = '';
+    let codeSnippet = `//enter a component`
 
     if(!props.inputValue){
-        componentName = <span className="code-block__component-start-name">enter-component-name</span> ;
+        codeSnippet = <span className="code-block__component-start-name">Enter a component name to get started</span>
     } else {
-        componentName = <span className="code-block__component-name">{props.inputValue}</span> ;
-    }
+
+
+        switch(props.radioOption){
+            case('function-option'): codeSnippet = `Import React from 'react';
+
+const ${props.inputValue} = (props) => {
+    return (
+        <h1>This is the ${props.inputValue} component</h1>
+    );
+}
+            
+export default Component;`; break;
+            case('class-option'): codeSnippet = `Import React from 'react';
+
+class ${props.inputValue} extends React.component {
+    render(){
+        return (
+            <h1>This is the ${props.inputValue} component</h1>
+        );
+    };
+};
+            
+export default Component;`; break;}
+        }
+
+        
+
+
 
     return (
         <div className="code-block">
 
             <div className="code-block__button-container">
                 <Button clicked={props.resetInput} btnType="tertiary" icon="reset" colorMode={props.colorMode}>Reset</Button>
-                <Button clicked={hasBeenClicked} btnType="secondary" icon="clipboard" colorMode={props.colorMode}>Copy to clipboard</Button>
+                <Button clicked={(e) => {console.log(e.target)}} btnType="secondary" icon="clipboard" colorMode={props.colorMode}>Copy to clipboard</Button>
             </div>
 
             <div className="code-block__button-effect--container">
@@ -34,14 +55,7 @@ const OutputCodeBlock = (props) => {
             
             <pre>
                 <code className="code-block__code">
-                    Import React from 'react';<br/><br/>
-                    {/* <span className="code-block__code-comment">Your  component here </span><br/><br/> */}
-                    const {componentName} = (props) => &#123; <br/><br/>
-                        return ( <br/><br/>
-                            &lt;h1&gt; This is the {componentName} component &lt;/h1&gt;
-                        ); <br/><br/>
-                    &#125; <br/><br/>
-                    export default {componentName};
+                    {codeSnippet}
                 </code>
             </pre> 
         </div>
