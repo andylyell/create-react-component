@@ -9,17 +9,14 @@ class Layout extends React.Component {
 
     state = {
         colorMode: true,
-        componentIsClass: true,
+        selectedOption: 'function-option',
         inputValue: ''
     }
 
-    componentDidMount(){
-        // console.log('[ComponentDidMount] ' + this.state.colorMode);
-    }
-
-    componentDidUpdate(){
-        // console.log('[ComponentDidUpdate] ' + this.state.colorMode);
-        // console.log(this.state.inputValue);
+    radioOptionChange = (e) => {
+        this.setState({
+            selectedOption: e.target.value
+          });
     }
 
     inputChangedHandler = (e) => {
@@ -41,6 +38,12 @@ class Layout extends React.Component {
           });
     }
 
+    typeSwitch = () => {
+        this.setState((prevState) => {
+            return {componentIsClass: !prevState.componentIsClass}
+        });
+    }
+
     render(){
 
         let layoutControlStyle = "layout__control";
@@ -58,8 +61,17 @@ class Layout extends React.Component {
                     <InfoBlock colorMode={this.state.colorMode}/>
                     <div className={layoutControlStyle}>
                         <div className="layout__control--container">
-                            <ControlPanel colorMode={this.state.colorMode} inputChange={this.inputChangedHandler} inputValue={this.state.inputValue}/>
-                            <OutputCodeBlock colorMode={this.state.colorMode} inputValue={this.state.inputValue} resetInput={this.resetInput}/>
+                            <ControlPanel 
+                                colorMode={this.state.colorMode} 
+                                inputChange={this.inputChangedHandler} 
+                                inputValue={this.state.inputValue} 
+                                radioOption={this.state.selectedOption}
+                                radioOptionChange={this.radioOptionChange}/>
+                            <OutputCodeBlock 
+                                colorMode={this.state.colorMode} 
+                                inputValue={this.state.inputValue} 
+                                resetInput={this.resetInput}
+                                radioOption={this.state.selectedOption}/>
                         </div>
                     </div>
                 </div>

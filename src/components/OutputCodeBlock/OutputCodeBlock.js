@@ -69,3 +69,30 @@ export default OutputCodeBlock;
 // }; 
                         
 // export default Component;`}
+
+/* 
+Import React from 'react';
+
+const Component = (props) => {
+    return (
+        <h1>This is the Component Component</h1>
+    );
+}
+
+export default Component;
+*/
+
+/*
+import React from 'react';
+
+class Component extends React.component {
+    render(){
+        return(
+            <h1>This is the Component Component</h1>
+        );
+    }
+}
+
+export defualt Component;
+
+*/
