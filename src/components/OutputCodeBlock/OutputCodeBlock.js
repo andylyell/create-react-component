@@ -3,6 +3,7 @@ import Button from '../UI/Button/Button';
 
 const OutputCodeBlock = (props) => {
 
+    
     let codeSnippet = `//enter a component`
 
     if(!props.inputValue){
@@ -33,8 +34,12 @@ class ${props.inputValue} extends React.component {
 export default Component;`; break;}
         }
 
-        
-
+let disableCheck = !props.inputValue ? true : false;
+const copyToClipboard = _ => {
+    if(!disableCheck){
+        navigator.clipboard.writeText(codeSnippet);
+    }
+}
 
 
     return (
@@ -42,7 +47,7 @@ export default Component;`; break;}
 
             <div className="code-block__button-container">
                 <Button clicked={props.resetInput} btnType="tertiary" icon="reset" colorMode={props.colorMode}>Reset</Button>
-                <Button clicked={(e) => {console.log(e.target)}} btnType="secondary" icon="clipboard" colorMode={props.colorMode}>Copy to clipboard</Button>
+                <Button clicked={copyToClipboard} btnType="secondary" icon="clipboard" colorMode={props.colorMode}>Copy to clipboard</Button>
             </div>
 
             <div className="code-block__button-effect--container">
@@ -63,50 +68,3 @@ export default Component;`; break;}
 }
 
 export default OutputCodeBlock;
-
-
-{/* <code className="code-block__code">
-                    Import React from 'react';<br/><br/>
-                    <span className="code-block__code-comment">Your  component here </span><br/><br/>
-                    const {componentName} = () => &#123; <br/><br/>
-                        return (); <br/><br/>
-                    &#125; <br/><br/>
-                    export default {componentName};
-                </code> */}
-
-//                 {`Import React from 'react';
-
-// const Component = (props) => {
-//     return (
-//         <h1>This is the ${componentName} component</h1>
-//     );
-// }; 
-                        
-// export default Component;`}
-
-/* 
-Import React from 'react';
-
-const Component = (props) => {
-    return (
-        <h1>This is the Component Component</h1>
-    );
-}
-
-export default Component;
-*/
-
-/*
-import React from 'react';
-
-class Component extends React.component {
-    render(){
-        return(
-            <h1>This is the Component Component</h1>
-        );
-    }
-}
-
-export defualt Component;
-
-*/

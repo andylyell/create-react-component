@@ -2,11 +2,6 @@ import React from 'react';
 import Button from '../UI/Button/Button';
 import { addDarkClass, removeDarkClass } from '../../helpers/helpers';
 
-// function hasBeenClicked(e) {
-//     console.log(e.target);
-//     console.log('I have been clicked');
-// };
-
 const Header = (props) => {
 
 

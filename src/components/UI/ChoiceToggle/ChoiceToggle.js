@@ -2,8 +2,6 @@ import React from 'react';
 
 const ChoiceToggle = (props) => {
 
-    console.log(props.radioOption);
-
     return (
         <div className="choice-toggle__container">
             <label className="container"> 
@@ -31,8 +29,3 @@ const ChoiceToggle = (props) => {
 };
 
 export default ChoiceToggle;
-
-// <form className="choice-toggle">
-        //     <input className="choice-toggle__input" type="radio" name="type" value="function" defaultChecked/> <span className="choice-toggle__input--text">Function</span>
-        //     <input className="choice-toggle__input" type="radio" name="type" value="class"/> <span className="choice-toggle__input--text">Class</span>
-        // </form>);

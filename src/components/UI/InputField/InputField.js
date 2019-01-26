@@ -2,10 +2,6 @@ import React from 'react';
 
 const InputField = (props) => {
 
-    // const handleChange = (e) => {
-    //     console.log(e.target.value);
-    // }
-
     return(
         <div className="input-field">
             <label className="input-field__label" htmlFor="name">Component Name</label>
