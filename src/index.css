@@ -150,15 +150,22 @@ html, body, #root {
 .code-block__code {
   font-family: monospace;
   font-size: 16px;
+  line-height: 24px;
   color: #dbdbdb; }
 
 .code-block__code-comment {
   font-family: monospace;
   color: #838383; }
 
-.code-block__component-name {
+.code-block__component-start-name {
+  font-family: monospace;
   font-style: italic;
   color: #838383; }
+
+.code-block__component-name {
+  font-family: monospace;
+  font-style: normal;
+  color: #00c732; }
 
 pre {
   padding-left: 20px;

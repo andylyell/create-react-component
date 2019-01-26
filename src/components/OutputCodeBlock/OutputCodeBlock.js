@@ -8,12 +8,12 @@ function hasBeenClicked(e) {
 
 const OutputCodeBlock = (props) => {
 
-    let componentName = null;
+    let componentName = '';
 
     if(!props.inputValue){
-        componentName = <span className="code-block__component-name">enter-component-name</span> ;
+        componentName = <span className="code-block__component-start-name">enter-component-name</span> ;
     } else {
-        componentName = props.inputValue;
+        componentName = <span className="code-block__component-name">{props.inputValue}</span> ;
     }
 
     return (
@@ -36,8 +36,10 @@ const OutputCodeBlock = (props) => {
                 <code className="code-block__code">
                     Import React from 'react';<br/><br/>
                     {/* <span className="code-block__code-comment">Your  component here </span><br/><br/> */}
-                    const {componentName} = () => &#123; <br/><br/>
-                        return (); <br/><br/>
+                    const {componentName} = (props) => &#123; <br/><br/>
+                        return ( <br/><br/>
+                            &lt;h1&gt; This is the {componentName} component &lt;/h1&gt;
+                        ); <br/><br/>
                     &#125; <br/><br/>
                     export default {componentName};
                 </code>
@@ -47,3 +49,23 @@ const OutputCodeBlock = (props) => {
 }
 
 export default OutputCodeBlock;
+
+
+{/* <code className="code-block__code">
+                    Import React from 'react';<br/><br/>
+                    <span className="code-block__code-comment">Your  component here </span><br/><br/>
+                    const {componentName} = () => &#123; <br/><br/>
+                        return (); <br/><br/>
+                    &#125; <br/><br/>
+                    export default {componentName};
+                </code> */}
+
+//                 {`Import React from 'react';
+
+// const Component = (props) => {
+//     return (
+//         <h1>This is the ${componentName} component</h1>
+//     );
+// }; 
+                        
+// export default Component;`}

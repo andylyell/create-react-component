@@ -49,6 +49,7 @@ $button-radius: 10px;
     &__code{
         font-family: monospace;
         font-size: 16px;
+        line-height: 24px;
         color: #dbdbdb;
     }
 
@@ -57,9 +58,16 @@ $button-radius: 10px;
         color: #838383;
     }
 
-    &__component-name{
+    &__component-start-name{
+        font-family: monospace;
         font-style: italic;
         color: #838383;
+    }
+
+    &__component-name{
+        font-family: monospace;
+        font-style: normal;
+        color: #00c732;
     }
 }
 

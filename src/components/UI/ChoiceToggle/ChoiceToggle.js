@@ -1,6 +1,8 @@
 import React from 'react';
 
 const ChoiceToggle = (props) => {
+
+    console.log(props);
     return (
         <div className="choice-toggle__container">
             <label className="container"> 

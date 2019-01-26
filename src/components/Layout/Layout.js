@@ -35,7 +35,6 @@ class Layout extends React.Component {
     }
 
 
-
     colorSwitch = () => {
         this.setState((prevState) => {
             return {colorMode: !prevState.colorMode}
