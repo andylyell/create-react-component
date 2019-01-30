@@ -2,6 +2,10 @@ import React from 'react';
 
 const InputField = (props) => {
 
+    const stringSanitisation = () => {
+        console.log('string sanitisation');
+    }
+
     return(
         <div className="input-field">
             <label className="input-field__label" htmlFor="name">Component Name</label>

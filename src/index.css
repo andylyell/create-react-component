@@ -74,6 +74,34 @@ html, body, #root {
 .info-block {
   background-color: white; }
 
+.info-block__creators {
+  padding: 14px 50px;
+  display: flex;
+  justify-content: flex-end; }
+
+.info-block__creator {
+  font-weight: 700; }
+
+.info-block__creator-link,
+.info-block__creator-link:link .info-block__creator-link:visited {
+  text-decoration: none;
+  position: relative;
+  color: #272727; }
+
+.info-block__creator:hover .info-block__creator-link::after {
+  width: 80%;
+  transition: .3s; }
+
+.info-block__creator-link::after {
+  content: "";
+  width: 0%;
+  position: absolute;
+  transition: .3s;
+  text-align: center;
+  top: 24px;
+  left: 2px;
+  border-bottom: 1px solid black; }
+
 .info-block__container {
   max-width: 650px; }
 

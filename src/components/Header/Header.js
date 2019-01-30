@@ -4,8 +4,6 @@ import { addDarkClass, removeDarkClass } from '../../helpers/helpers';
 
 const Header = (props) => {
 
-
-    // const styleName = "nav";
     let navStyle = "nav";
     let navTitleStyle = "nav__title";
     let buttonText = null;

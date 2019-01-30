@@ -11,6 +11,40 @@
     @extend %info-block-extend;
     background-color: white;
 
+    &__creators{
+        padding: 14px 50px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__creator{
+        font-weight: 700;
+    }
+
+    &__creator-link,
+    &__creator-link:link
+    &__creator-link:visited{
+        text-decoration: none;
+        position: relative;
+        color: $lgrey--1;
+    }
+
+    &__creator:hover .info-block__creator-link::after{
+        width: 80%;
+        transition: .3s;
+    }
+
+    &__creator-link::after{
+        content: "";
+        width: 0%;
+        position: absolute;
+        transition: .3s;
+        text-align: center;
+        top: 24px;
+        left: 2px;
+        border-bottom: 1px solid black;
+    }
+
     &__container{
         max-width: 650px;
     }
