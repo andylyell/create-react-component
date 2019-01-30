@@ -37,13 +37,13 @@ const Button = (props) => {
 
     if(props.icon){
         btn = 
-        <div onClick={props.clicked} className={btnClasses}>
+        <button disabled={props.disabled} type="button" onClick={props.clicked} className={btnClasses}>
                 <div className='button__icon'>{btnIcon}</div>
                 {/* <img className="button__icon" src={btnIcon} alt=""/> */}
                 <p>{props.children}</p>
-        </div>;
+        </button>;
     } else {
-        btn = <div onClick={props.clicked} className={btnClasses}><p>{props.children}</p></div>;
+        btn = <button disabled={props.disabled} onClick={props.clicked} className={btnClasses}><p>{props.children}</p></button>;
     }
 
     return (

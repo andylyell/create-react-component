@@ -36,7 +36,9 @@ export default Component;`; break;}
 
 let disableCheck = !props.inputValue ? true : false;
 const copyToClipboard = _ => {
+    
     if(!disableCheck){
+        console.log('click')
         navigator.clipboard.writeText(codeSnippet);
     }
 }
@@ -47,7 +49,7 @@ const copyToClipboard = _ => {
 
             <div className="code-block__button-container">
                 <Button clicked={props.resetInput} btnType="tertiary" icon="reset" colorMode={props.colorMode}>Reset</Button>
-                <Button clicked={copyToClipboard} btnType="secondary" icon="clipboard" colorMode={props.colorMode}>Copy to clipboard</Button>
+                <Button disabled={disableCheck} clicked={copyToClipboard} btnType="secondary" icon="clipboard" colorMode={props.colorMode}>Copy to clipboard</Button>
             </div>
 
             <div className="code-block__button-effect--container">

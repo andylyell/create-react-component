@@ -206,7 +206,10 @@ pre {
   border-radius: 8px;
   display: flex;
   align-items: center;
-  transition: .3s; }
+  transition: .3s;
+  border: none;
+  font-size: 16px;
+  outline: none; }
 
 .button:hover {
   cursor: pointer; }
@@ -249,6 +252,9 @@ pre {
 
 .button__secondary .button__icon {
   fill: white; }
+
+.button__secondary:disabled {
+  background-color: hotpink; }
 
 .button__secondary--dark {
   background-color: salmon;

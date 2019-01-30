@@ -10,7 +10,8 @@ class Layout extends React.Component {
     state = {
         colorMode: true,
         selectedOption: 'function-option',
-        inputValue: ''
+        inputValue: '',
+        inputValidation: []
     }
 
     radioOptionChange = (e) => {
@@ -20,6 +21,10 @@ class Layout extends React.Component {
     }
 
     inputChangedHandler = (e) => {
+
+        //String handling could go here
+        console.log(e.target.value);
+
         this.setState({
             inputValue: e.target.value
         });
