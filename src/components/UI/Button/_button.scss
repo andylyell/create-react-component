@@ -29,10 +29,6 @@
             transform: translateY(-2px);
         }
 
-        // &:disabled{
-        //     background-color: hotpink;
-        // }
-
         &:active{
             transform: translateY(1px);
         }
@@ -69,7 +65,13 @@
         }
 
         &:disabled{
-            background-color: hotpink;
+            background-color: $dgrey--1;
+            color: $grey--3;
+            cursor: not-allowed;
+
+            & .button__icon{
+                fill: $grey--3;
+            }
         }
     }
 
@@ -82,11 +84,23 @@
     }
 
     &__tertiary{
-        background-color: #61636A;
-        color: $grey--3;
+        background-color: transparent;
+        box-shadow: inset 0px 0px 0px 1px $blue--1;
+        color: $blue--1;
 
         & .button__icon{
-            fill: $grey--3;
+            fill: $blue--1;
+        }
+
+        &:disabled{
+            box-shadow: inset 0px 0px 0px 0px $blue--1;
+            background-color: $dgrey--1;
+            color: $grey--3;
+            cursor: not-allowed;
+
+            & .button__icon{
+                fill: $grey--3;
+            }
         }
     }
 

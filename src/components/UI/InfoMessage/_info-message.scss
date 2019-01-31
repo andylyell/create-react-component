@@ -1,0 +1,34 @@
+.info-message{
+    display: flex;
+    position: absolute;    
+    font-style: italic;
+    font-size: 14px;
+    align-items: center;
+
+    %icon-attributes{
+        margin-right: 10px;
+    }
+
+    &__icon{
+        &--info{
+            @extend %icon-attributes;
+            fill: $grey--5;
+        }
+        &--error{
+            @extend %icon-attributes;
+            fill: #e61d38;
+        }
+    }
+
+    &__info{
+        top: 0;
+        left: 170px;
+        color: $grey--5;
+    }
+
+    &__error{
+        color: #e61d38;
+        top: 80px;
+        left: 0;
+    }
+}

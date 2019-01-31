@@ -1,8 +1,9 @@
 .input-field{
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 44px;
     margin-right: 20px;
+    position: relative;
 
     &__label{
         margin-bottom: 8px;
@@ -13,6 +14,7 @@
         border-radius: $border--radius;
         border: 1px solid $grey--4;
         font-size: 16px;
+        margin-bottom: 10px;
 
         &:focus{
             outline: none;

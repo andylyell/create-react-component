@@ -11,7 +11,11 @@ class Layout extends React.Component {
         colorMode: true,
         selectedOption: 'function-option',
         inputValue: '',
-        inputValidation: []
+        inputValidation: {
+            tooLong: false,
+            spacesPresent: '',
+            illegalCharactersPresent: ''
+        }
     }
 
     radioOptionChange = (e) => {
@@ -21,14 +25,39 @@ class Layout extends React.Component {
     }
 
     inputChangedHandler = (e) => {
-
+        const inputString = e.target.value;
         //String handling could go here
-        console.log(e.target.value);
+        // console.log(e.target.value);
+        this.sanitiseString(inputString);
+        this.checkForLength(inputString);
 
         this.setState({
-            inputValue: e.target.value
+            inputValue: inputString
         });
     };
+
+    sanitiseString = (inputString) => {
+        if(inputString.includes(" ")){
+            console.log('spaces present');
+        }
+    }
+
+    checkForLength = (string) => {
+        if(string.length > 32){
+            // console.log('toolong');
+            this.setState({
+                inputValidation: {
+                    tooLong: true
+                }
+            });
+        } else {
+            this.setState({
+                inputValidation: {
+                    tooLong: false
+                }
+            });
+        }
+    }
 
     resetInput = () => {
         this.setState({

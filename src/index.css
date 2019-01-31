@@ -121,9 +121,11 @@ html, body, #root {
 .info-block__text--dark {
   color: #e9e9e9; }
 
+.control__panel-container {
+  position: relative; }
+
 .control__button-container {
-  display: flex;
-  margin-bottom: 60px; }
+  display: flex; }
 
 .control__input-container {
   width: 100%;
@@ -135,7 +137,7 @@ html, body, #root {
 
 .control__input-container--radio {
   width: 35%;
-  margin-bottom: 6px; }
+  margin-bottom: 28px; }
 
 .code-block {
   background: linear-gradient(to bottom, #3f3f3f 0%, #383838 33%, #262626 100%);
@@ -254,7 +256,12 @@ pre {
   fill: white; }
 
 .button__secondary:disabled {
-  background-color: hotpink; }
+  background-color: #61636A;
+  color: #3A3A3F;
+  cursor: not-allowed; }
+
+.button__secondary:disabled .button__icon {
+  fill: #3A3A3F; }
 
 .button__secondary--dark {
   background-color: salmon;
@@ -264,10 +271,20 @@ pre {
   fill: white; }
 
 .button__tertiary {
-  background-color: #61636A;
-  color: #3A3A3F; }
+  background-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px #008CE9;
+  color: #008CE9; }
 
 .button__tertiary .button__icon {
+  fill: #008CE9; }
+
+.button__tertiary:disabled {
+  box-shadow: inset 0px 0px 0px 0px #008CE9;
+  background-color: #61636A;
+  color: #3A3A3F;
+  cursor: not-allowed; }
+
+.button__tertiary:disabled .button__icon {
   fill: #3A3A3F; }
 
 .button__tertiary--dark {
@@ -283,8 +300,9 @@ pre {
 .input-field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
-  margin-right: 20px; }
+  margin-bottom: 44px;
+  margin-right: 20px;
+  position: relative; }
 
 .input-field__label {
   margin-bottom: 8px; }
@@ -293,7 +311,8 @@ pre {
   padding: 14px 20px;
   border-radius: 8px;
   border: 1px solid #dadada;
-  font-size: 16px; }
+  font-size: 16px;
+  margin-bottom: 10px; }
 
 .input-field__input:focus {
   outline: none;
@@ -380,3 +399,29 @@ pre {
   height: 14px;
   border-radius: 50%;
   background: #2196F3; }
+
+.info-message {
+  display: flex;
+  position: absolute;
+  font-style: italic;
+  font-size: 14px;
+  align-items: center; }
+
+.info-message .info-message__icon--info, .info-message .info-message__icon--error {
+  margin-right: 10px; }
+
+.info-message__icon--info {
+  fill: #8B8D91; }
+
+.info-message__icon--error {
+  fill: #e61d38; }
+
+.info-message__info {
+  top: 0;
+  left: 170px;
+  color: #8B8D91; }
+
+.info-message__error {
+  color: #e61d38;
+  top: 80px;
+  left: 0; }

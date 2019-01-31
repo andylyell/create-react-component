@@ -1,7 +1,11 @@
 .control{
+
+    &__panel-container{
+        position: relative;
+    }
+
     &__button-container{
         display: flex;
-        margin-bottom: 60px;
     }
 
     &__input-container{
@@ -14,7 +18,7 @@
         }
         &--radio{
             width: 35%;
-            margin-bottom: 6px;
+            margin-bottom: 28px;
         }
     }
 }
