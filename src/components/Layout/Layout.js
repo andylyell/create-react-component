@@ -86,7 +86,8 @@ class Layout extends React.Component {
 
     resetInput = () => {
         this.setState({
-            inputValue: ''
+            inputValue: '',
+            sanitisedValue: ''
         });
     }
 

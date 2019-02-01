@@ -64,6 +64,15 @@
             fill: white;
         }
 
+        &:hover:enabled{
+            box-shadow: 0px 4px 20px -5px rgba(11, 17, 31, 0.753);
+            transform: translateY(-2px);
+        }
+
+        &:active:enabled{
+            transform: translateY(1px);
+        }
+
         &:disabled{
             background-color: $dgrey--1;
             color: $grey--3;
@@ -87,6 +96,14 @@
         background-color: transparent;
         box-shadow: inset 0px 0px 0px 1px $blue--1;
         color: $blue--1;
+
+        &:hover:enabled .button__icon{
+            animation-name: spin;
+            animation-duration: 4000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform-origin: 50% 49%;
+        }
 
         & .button__icon{
             fill: $blue--1;
