@@ -3,7 +3,6 @@ import React from "react";
 const InfoMessage = (props) => {
 
   let infoClasses = null;
-  let infoBlock = null;
   let infoIcon = null;
 
   const infoStyleIcon =  <svg className="info-message__icon--info" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">

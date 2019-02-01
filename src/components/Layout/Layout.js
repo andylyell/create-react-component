@@ -11,11 +11,19 @@ class Layout extends React.Component {
         colorMode: true,
         selectedOption: 'function-option',
         inputValue: '',
+        sanitisedValue: '',
         inputValidation: {
             tooLong: false,
-            spacesPresent: '',
+            spacesPresent: false,
             illegalCharactersPresent: ''
         }
+    }
+
+    camelize = (str) => {
+        return str.replace(/\W+(.)/g, (match, chr) =>
+        {
+            return chr.toUpperCase();
+        });
     }
 
     radioOptionChange = (e) => {
@@ -25,12 +33,10 @@ class Layout extends React.Component {
     }
 
     inputChangedHandler = (e) => {
-        const inputString = e.target.value;
-        //String handling could go here
-        // console.log(e.target.value);
+        let inputString = e.target.value;
+        
         this.sanitiseString(inputString);
         this.checkForLength(inputString);
-
         this.setState({
             inputValue: inputString
         });
@@ -38,24 +44,43 @@ class Layout extends React.Component {
 
     sanitiseString = (inputString) => {
         if(inputString.includes(" ")){
-            console.log('spaces present');
+            const changedString = this.transformString(inputString);
+            this.setState(prevState =>({
+                // ...prevState,
+                sanitisedValue: changedString,
+                inputValidation: {
+                    ...prevState.inputValidation,
+                    spacesPresent: true
+                }
+            }));
+
+        } else {
+            this.setState(prevState =>({
+                sanitisedValue: inputString,
+                inputValidation: {
+                    ...prevState.inputValidation,
+                    spacesPresent: false
+                }
+            }));
         }
     }
 
     checkForLength = (string) => {
-        if(string.length > 32){
-            // console.log('toolong');
-            this.setState({
+        if(string.length >= 30){
+            this.setState(prevState =>({
                 inputValidation: {
+                    ...prevState.inputValidation,
                     tooLong: true
                 }
-            });
+            }));
         } else {
-            this.setState({
+
+            this.setState(prevState =>({
                 inputValidation: {
+                    ...prevState.inputValidation,
                     tooLong: false
                 }
-            });
+            }));
         }
     }
 
@@ -78,8 +103,14 @@ class Layout extends React.Component {
         });
     }
 
-    render(){
+    transformString = (inputString) => {
+        return inputString.replace(/\W+(.)/g, (match, chr) => 
+        {
+               return chr.toUpperCase();
+        });
+    }
 
+    render(){
         let layoutControlStyle = "layout__control";
         if(this.state.colorMode){
             layoutControlStyle = removeDarkClass(layoutControlStyle);
@@ -100,10 +131,11 @@ class Layout extends React.Component {
                                 inputChange={this.inputChangedHandler} 
                                 inputValue={this.state.inputValue} 
                                 radioOption={this.state.selectedOption}
-                                radioOptionChange={this.radioOptionChange}/>
+                                radioOptionChange={this.radioOptionChange}
+                                inputValidation={this.state.inputValidation}/>
                             <OutputCodeBlock 
                                 colorMode={this.state.colorMode} 
-                                inputValue={this.state.inputValue} 
+                                inputValue={this.state.sanitisedValue} 
                                 resetInput={this.resetInput}
                                 radioOption={this.state.selectedOption}/>
                         </div>
@@ -116,3 +148,5 @@ class Layout extends React.Component {
 };
 
 export default Layout;
+
+// chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=How%20to%20do%20Simple%20Form%20Validation%20in%20%23Reactjs%20%7C%20Learnetto&uri=https://learnetto.com/blog/how-to-do-simple-form-validation-in-reactjs
