@@ -25,7 +25,8 @@ html, body, #root {
   flex-grow: 1;
   padding: 50px 0;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  transition: .3s; }
 
 .layout {
   display: flex;
@@ -39,7 +40,7 @@ html, body, #root {
   width: 650px; }
 
 .layout__control--dark {
-  background-color: #fddede; }
+  background-color: #272727; }
 
 .nav, .nav--dark {
   display: flex;
@@ -77,22 +78,34 @@ html, body, #root {
   border-bottom: 1px solid #efefef;
   transition: .3s; }
 
-.info-block {
-  background-color: white; }
-
-.info-block__creators {
+.info-block__creators, .info-block__creators--dark {
   padding: 14px 50px;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  transition: .3s; }
+
+.info-block__creator-link, .info-block__creator-link:link, .info-block__creator-link:visited, .info-block__creator-link--dark, .info-block__creator-link--dark:link, .info-block__creator-link--dark:visited, --dark.info-block__creator-link:link, --dark.info-block__creator-link:link:visited, --dark.info-block__creator-link:visited {
+  text-decoration: none;
+  position: relative;
+  color: #F5F5F5;
+  transition: .3s; }
+
+.info-block {
+  background-color: white;
+  border-bottom: 1px solid #efefef; }
+
+.info-block__creators--dark {
+  background-color: #1d1d1d;
+  color: white; }
 
 .info-block__creator {
   font-weight: 700; }
 
-.info-block__creator-link,
-.info-block__creator-link:link .info-block__creator-link:visited {
-  text-decoration: none;
-  position: relative;
+.info-block__creator-link, .info-block__creator-link:link, .info-block__creator-link:visited {
   color: #272727; }
+
+.info-block__creator-link--dark, .info-block__creator-link--dark:link, .info-block__creator-link--dark:visited, .info-block__creator-link:link--dark, .info-block__creator-link:link--dark:link, .info-block__creator-link:link--dark:visited, .info-block__creator-link:visited--dark, .info-block__creator-link:visited--dark:link, .info-block__creator-link:visited--dark:visited {
+  color: #e9e9e9; }
 
 .info-block__creator:hover .info-block__creator-link::after {
   width: 80%;
@@ -108,6 +121,20 @@ html, body, #root {
   left: 2px;
   border-bottom: 1px solid black; }
 
+.info-block__creator:hover .info-block__creator-link--dark::after {
+  width: 80%;
+  transition: .3s; }
+
+.info-block__creator-link--dark::after {
+  content: "";
+  width: 0%;
+  position: absolute;
+  transition: .3s;
+  text-align: center;
+  top: 24px;
+  left: 2px;
+  border-bottom: 1px solid white; }
+
 .info-block__container {
   max-width: 650px; }
 
@@ -118,7 +145,8 @@ html, body, #root {
   color: #3A3A3F; }
 
 .info-block--dark {
-  background-color: #1d1d1d; }
+  background-color: #1d1d1d;
+  border-bottom: 1px solid #424242; }
 
 .info-block__title--dark {
   margin-bottom: 20px;

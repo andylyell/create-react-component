@@ -6,15 +6,33 @@
     transition: .3s;
 }
 
+%creators{
+    padding: 14px 50px;
+    display: flex;
+    justify-content: flex-end;
+    transition: .3s;
+}
+
+%creator-link{
+    text-decoration: none;
+    position: relative;
+    color: $grey--1;
+    transition: .3s;
+}
+
 
 .info-block{
     @extend %info-block-extend;
     background-color: white;
+    border-bottom: 1px solid $grey--2;
 
     &__creators{
-        padding: 14px 50px;
-        display: flex;
-        justify-content: flex-end;
+       @extend %creators;
+        &--dark{
+            @extend %creators;
+            background-color: $lgrey--2;
+            color: white;
+        }
     }
 
     &__creator{
@@ -22,11 +40,17 @@
     }
 
     &__creator-link,
-    &__creator-link:link
+    &__creator-link:link,
     &__creator-link:visited{
-        text-decoration: none;
-        position: relative;
+        @extend %creator-link;
         color: $lgrey--1;
+
+        &--dark,
+        &--dark:link,
+        &--dark:visited{
+            @extend %creator-link;
+            color: #e9e9e9;
+        }
     }
 
     &__creator:hover .info-block__creator-link::after{
@@ -45,6 +69,22 @@
         border-bottom: 1px solid black;
     }
 
+    &__creator:hover .info-block__creator-link--dark::after{
+        width: 80%;
+        transition: .3s;
+    }
+
+    &__creator-link--dark::after{
+        content: "";
+        width: 0%;
+        position: absolute;
+        transition: .3s;
+        text-align: center;
+        top: 24px;
+        left: 2px;
+        border-bottom: 1px solid white;
+    }
+
     &__container{
         max-width: 650px;
     }
@@ -61,7 +101,8 @@
 .info-block{
     &--dark{
         @extend %info-block-extend;
-        background-color: #1d1d1d;
+        background-color: $lgrey--2;
+        border-bottom: 1px solid #424242;
     }
 
     &__title--dark{

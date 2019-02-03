@@ -2,7 +2,8 @@
     flex-grow: 1;
     padding: 50px 0;
     display: flex;
-    justify-content: center; 
+    justify-content: center;
+    transition: .3s;
 }
 
 .layout{
@@ -21,7 +22,7 @@
 
         &--dark{
             @extend %layout-control-extend;
-            background-color: #fddede;
+            background-color: $lgrey--1;
         }
     }
 }

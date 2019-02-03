@@ -152,5 +152,3 @@ class Layout extends React.Component {
 };
 
 export default Layout;
-
-// chrome-extension://klbibkeccnjlkjkiokjodocebajanakg/suspended.html#ttl=How%20to%20do%20Simple%20Form%20Validation%20in%20%23Reactjs%20%7C%20Learnetto&uri=https://learnetto.com/blog/how-to-do-simple-form-validation-in-reactjs
