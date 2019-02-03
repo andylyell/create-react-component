@@ -34,10 +34,18 @@ class ${props.inputValue} extends React.component {
 export default Component;`; break;}
         }
 
-let disableCheck = !props.inputValue ? true : false;
+let resetCheck = null;
+let copyCheck = null;
+if(!props.inputValue){
+    copyCheck = true;
+    resetCheck = true;
+}
+if(props.inputValidation.illegalCharactersPresent){
+    copyCheck = true;
+}
 
 const copyToClipboard = _ => {
-    if(!disableCheck){
+    if(!copyCheck){
         console.log('click')
         navigator.clipboard.writeText(codeSnippet);
     }
@@ -46,8 +54,8 @@ const copyToClipboard = _ => {
         <div className="code-block">
 
             <div className="code-block__button-container">
-                <Button disabled={disableCheck} clicked={props.resetInput} btnType="tertiary" icon="reset" colorMode={props.colorMode}>Reset</Button>
-                <Button disabled={disableCheck} clicked={copyToClipboard} btnType="secondary" icon="clipboard" colorMode={props.colorMode}>Copy to clipboard</Button>
+                <Button disabled={resetCheck} clicked={props.resetInput} btnType="tertiary" icon="reset" colorMode={props.colorMode}>Reset</Button>
+                <Button disabled={copyCheck} clicked={copyToClipboard} btnType="secondary" icon="clipboard" colorMode={props.colorMode}>Copy to clipboard</Button>
             </div>
 
             <div className="code-block__button-effect--container">

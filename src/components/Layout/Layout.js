@@ -11,19 +11,11 @@ class Layout extends React.Component {
         colorMode: true,
         selectedOption: 'function-option',
         inputValue: '',
-        sanitisedValue: '',
         inputValidation: {
             tooLong: false,
-            spacesPresent: false,
-            illegalCharactersPresent: ''
+            illegalCharactersPresent: false,
+            illegalCharacters: []
         }
-    }
-
-    camelize = (str) => {
-        return str.replace(/\W+(.)/g, (match, chr) =>
-        {
-            return chr.toUpperCase();
-        });
     }
 
     radioOptionChange = (e) => {
@@ -34,7 +26,14 @@ class Layout extends React.Component {
 
     inputChangedHandler = (e) => {
         let inputString = e.target.value;
-        
+        if(inputString.length === 0){
+            this.setState(prevState =>({
+                inputValidation: {
+                    ...prevState.inputValidation,
+                    illegalCharacters: []
+                }
+            }))
+        }
         this.sanitiseString(inputString);
         this.checkForLength(inputString);
         this.setState({
@@ -43,23 +42,28 @@ class Layout extends React.Component {
     };
 
     sanitiseString = (inputString) => {
-        if(inputString.includes(" ")){
-            const changedString = this.transformString(inputString);
+        const letters = /^[0-9a-zA-Z]+$/;
+        const numberStart = /^\d/;
+        let characterList = [];
+        if((!inputString.match(letters) && inputString.length >= 1) || (inputString.match(numberStart) && inputString.length >= 1)){
+            for (let i = 0; i < inputString.length; i++){
+                if(!inputString[i].match(letters)){
+                    characterList.push(inputString[i]);
+                }
+            }
             this.setState(prevState =>({
-                // ...prevState,
-                sanitisedValue: changedString,
                 inputValidation: {
                     ...prevState.inputValidation,
-                    spacesPresent: true
+                    illegalCharactersPresent: true,
+                    illegalCharacters: characterList
                 }
             }));
 
         } else {
             this.setState(prevState =>({
-                sanitisedValue: inputString,
                 inputValidation: {
                     ...prevState.inputValidation,
-                    spacesPresent: false
+                    illegalCharactersPresent: false
                 }
             }));
         }
@@ -87,7 +91,11 @@ class Layout extends React.Component {
     resetInput = () => {
         this.setState({
             inputValue: '',
-            sanitisedValue: ''
+            inputValidation: {
+                tooLong: false,
+                illegalCharactersPresent: false,
+                illegalCharacters: []
+            }
         });
     }
 
@@ -104,14 +112,8 @@ class Layout extends React.Component {
         });
     }
 
-    transformString = (inputString) => {
-        return inputString.replace(/\W+(.)/g, (match, chr) => 
-        {
-               return chr.toUpperCase();
-        });
-    }
-
     render(){
+        // console.log(this.state.inputValidation);
         let layoutControlStyle = "layout__control";
         if(this.state.colorMode){
             layoutControlStyle = removeDarkClass(layoutControlStyle);
@@ -136,9 +138,10 @@ class Layout extends React.Component {
                                 inputValidation={this.state.inputValidation}/>
                             <OutputCodeBlock 
                                 colorMode={this.state.colorMode} 
-                                inputValue={this.state.sanitisedValue} 
+                                inputValue={this.state.inputValue} 
                                 resetInput={this.resetInput}
-                                radioOption={this.state.selectedOption}/>
+                                radioOption={this.state.selectedOption}
+                                inputValidation={this.state.inputValidation}/>
                         </div>
                     </div>
                 </div>

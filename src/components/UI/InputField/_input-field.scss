@@ -15,12 +15,25 @@
         right: 20px;
     }
 
-    &__input{
+    %standard-input{
         padding: 14px 20px;
         border-radius: $border--radius;
         border: 1px solid $grey--4;
         font-size: 16px;
         margin-bottom: 10px;
+    }
+
+    &__input{
+        @extend %standard-input;
+
+        &--error{
+            @extend %standard-input;
+            border: 1px solid #c50031;
+            &:focus{
+                border: 1px solid #c50031;
+                outline: none;
+            }
+        }
 
         &:focus{
             outline: none;

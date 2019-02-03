@@ -332,12 +332,19 @@ pre {
   top: 44px;
   right: 20px; }
 
-.input-field__input {
+.input-field .input-field__input, .input-field .input-field__input--error {
   padding: 14px 20px;
   border-radius: 8px;
   border: 1px solid #dadada;
   font-size: 16px;
   margin-bottom: 10px; }
+
+.input-field__input--error {
+  border: 1px solid #c50031; }
+
+.input-field__input--error:focus {
+  border: 1px solid #c50031;
+  outline: none; }
 
 .input-field__input:focus {
   outline: none;

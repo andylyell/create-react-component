@@ -5,16 +5,34 @@ import InfoMessage from "../UI/InfoMessage/InfoMessage";
 
 const ControlPanel = props => {
 
-    // console.log(props.inputValidation);
     let error = null;
     let info = null;
-    let spacesCheck = !props.inputValidation.spacesPresent ? true : false;
-    let disableCheck = !props.inputValue ? true : false;
-    if(!disableCheck){
-        error =  <InfoMessage infoType="error">This is an error</InfoMessage>
+    let lengthCheck = !props.inputValidation.tooLong ? true : false;
+    let illegalCharacterCheck = !props.inputValidation.illegalCharactersPresent ? true : false;
+    let numberCheck = null;
+    let messageCharacters = [];
+    let illegalCharacterMessage = null;
+    if (!isNaN(props.inputValue[0]) && props.inputValue[0] !== " "){
+      numberCheck = 'First character cannot be a number';
     }
-    if(!spacesCheck){
-        info = <InfoMessage infoType="info">Spaces are changed to camel case</InfoMessage>
+    if(!illegalCharacterCheck){
+        let characters = props.inputValidation.illegalCharacters;
+        for(let i = 0; i < characters.length; i++){
+          if(messageCharacters.includes(characters[i])){
+          } 
+          else {
+            if(characters[i] === ' ' && !messageCharacters.includes('white space')){
+              characters.splice(i, 1, 'white space')
+              console.log(characters[i]);
+            }
+            messageCharacters.push(characters[i]);
+            illegalCharacterMessage = 'Illegal characters used: ' + messageCharacters.join(" ") + '  ';
+          }
+        }
+        error =  <InfoMessage infoType="error">{illegalCharacterMessage}{numberCheck}</InfoMessage>
+    }
+    if(!lengthCheck){
+        info = <InfoMessage infoType="info">Reached 30 character limit</InfoMessage>
     }
 
   return (
@@ -25,6 +43,7 @@ const ControlPanel = props => {
             <InputField
               inputChange={props.inputChange}
               inputValue={props.inputValue}
+              inputValidation={props.inputValidation}
             />
           </div>
           <div className="control__input-container--radio">
