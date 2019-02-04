@@ -14,7 +14,6 @@ const InputField = (props) => {
     }
 
     let checked = null;
-    let inputStyle = 'input-field__input';
     if(props.inputValidation.illegalCharactersPresent){
         if(props.colorMode){
             inputColorStyle = 'input-field__input--error';

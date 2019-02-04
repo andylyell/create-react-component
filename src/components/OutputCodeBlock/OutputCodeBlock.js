@@ -43,8 +43,18 @@ class ${props.inputValue} extends React.component {
     };
 };
             
-export default Component;`; break;}
+export default Component;`; break;
+
+default: codeSnippet = `Import React from 'react';
+
+        const ${props.inputValue} = (props) => {
+            return (
+                <h1>This is the ${props.inputValue} component</h1>
+            );
         }
+                    
+        export default Component;`; break;}
+        } 
 
 let resetCheck = null;
 let copyCheck = null;

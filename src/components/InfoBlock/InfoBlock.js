@@ -27,7 +27,7 @@ const InfoBlock = (props) => {
         <>
             <div className={infoStyleCreators}>
                 <div>
-                    By <span className="info-block__creator"> <a className={infoStyleCreatorLink} href="https://andylyell.co.uk/">Andy</a></span> and <span className="info-block__creator"><a className={infoStyleCreatorLink} href="">Sam</a></span>
+                    By <span className="info-block__creator"> <a className={infoStyleCreatorLink} href="https://andylyell.co.uk/">Andy</a></span> and <span className="info-block__creator"><a className={infoStyleCreatorLink} href="https://medium.com/@samscook">Sam</a></span>
                 </div>
             </div>
             <div className={infoStyle}>
