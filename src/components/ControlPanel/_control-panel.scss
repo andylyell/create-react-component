@@ -2,6 +2,9 @@
     width: 100%;
     display: flex;
     align-items: center;
+    @include respond(bp-small){
+        flex-direction: column;
+      }
 }
 
 
@@ -22,19 +25,31 @@
             color: white;
             &--input{
                 width: 65%;
+                @include respond(bp-small){
+                    width: 100%;
+                  }
             }
             &--radio{
                 width: 35%;
                 margin-bottom: 28px;
+                @include respond(bp-small){
+                    width: 100%;
+                  }
             }
         }
 
         &--input{
             width: 65%;
+            @include respond(bp-small){
+                width: 100%;
+              }
         }
         &--radio{
             width: 35%;
             margin-bottom: 28px;
+            @include respond(bp-small){
+                width: 100%;
+              }
         }
     }
 }

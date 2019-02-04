@@ -3,6 +3,9 @@
     justify-content: space-between;
     padding: 14px 40px;
     transition: .3s;
+    @include respond(bp-small){
+        padding: 10px 16px;
+      }
 }
 
 
@@ -10,12 +13,24 @@
     @extend %nav-extend;
     border-bottom: 1px solid $grey--2;
 
+    &__icon{
+        width: 20px;
+        height: 20px;
+        flex: 1;
+    }
+
     &__title{
         display: flex;
         align-items: center;
 
         & svg{
             margin-right: 10px;
+        }
+
+        &--text{
+            @include respond(bp-smallest){
+                display: none;
+              }
         }
     }
 

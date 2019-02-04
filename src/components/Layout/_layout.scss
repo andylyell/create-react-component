@@ -4,6 +4,9 @@
     display: flex;
     justify-content: center;
     transition: .3s;
+    @include respond(bp-small){
+        padding: 20px 16px;
+      }
 }
 
 .layout{

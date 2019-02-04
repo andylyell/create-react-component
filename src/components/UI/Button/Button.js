@@ -39,11 +39,10 @@ const Button = (props) => {
         btn = 
         <button disabled={props.disabled} type="button" onClick={props.clicked} className={btnClasses}>
                 <div className='button__icon'>{btnIcon}</div>
-                {/* <img className="button__icon" src={btnIcon} alt=""/> */}
-                <p>{props.children}</p>
+                <p><span className="button__text">{props.children}</span></p>
         </button>;
     } else {
-        btn = <button disabled={props.disabled} onClick={props.clicked} className={btnClasses}><p>{props.children}</p></button>;
+        btn = <button disabled={props.disabled} onClick={props.clicked} className={btnClasses}><p><span className="button__text">{props.children}</span></p></button>;
     }
 
     return (

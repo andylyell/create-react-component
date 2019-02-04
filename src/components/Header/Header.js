@@ -21,11 +21,11 @@ const Header = (props) => {
     return (
         <nav className={navStyle}>
             <div className={navTitleStyle}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="" width="20" height="20" viewBox="0 0 24 24">
                         <path d="M12 18L.6 9 12 0l11.4 9L12 18z"/>
                         <path d="M12 21l-9.5-7.5L.6 15 12 24l11.4-9-2-1.5L12 21z"/>
                     </svg>
-                    <p>Create react component</p>
+                    <p className="nav__title--text">Create react component</p>
             </div>
             <Button clicked={props.colorSwitch} icon="lightbulb" btnType="primary" colorMode={props.colorMode}>{buttonText}</Button>
         </nav>

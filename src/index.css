@@ -28,6 +28,10 @@ html, body, #root {
   justify-content: center;
   transition: .3s; }
 
+@media only screen and (max-width: 42.5em) {
+  .layout__control, .layout__control--dark {
+    padding: 20px 16px; } }
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -48,8 +52,17 @@ html, body, #root {
   padding: 14px 40px;
   transition: .3s; }
 
+@media only screen and (max-width: 42.5em) {
+  .nav, .nav--dark {
+    padding: 10px 16px; } }
+
 .nav {
   border-bottom: 1px solid #efefef; }
+
+.nav__icon {
+  width: 20px;
+  height: 20px;
+  flex: 1; }
 
 .nav__title {
   display: flex;
@@ -57,6 +70,10 @@ html, body, #root {
 
 .nav__title svg {
   margin-right: 10px; }
+
+@media only screen and (max-width: 27.5em) {
+  .nav__title--text {
+    display: none; } }
 
 .nav--dark {
   background-color: black;
@@ -78,11 +95,21 @@ html, body, #root {
   border-bottom: 1px solid #efefef;
   transition: .3s; }
 
+@media only screen and (max-width: 42.5em) {
+  .info-block, .info-block--dark {
+    padding: 20px 16px 40px 16px;
+    text-align: center; } }
+
 .info-block__creators, .info-block__creators--dark {
   padding: 14px 50px;
   display: flex;
   justify-content: flex-end;
   transition: .3s; }
+
+@media only screen and (max-width: 42.5em) {
+  .info-block__creators, .info-block__creators--dark {
+    justify-content: center;
+    padding: 10px 16px; } }
 
 .info-block__creator-link, .info-block__creator-link:link, .info-block__creator-link:visited, .info-block__creator-link--dark, .info-block__creator-link--dark:link, .info-block__creator-link--dark:visited, --dark.info-block__creator-link:link, --dark.info-block__creator-link:link:visited, --dark.info-block__creator-link:visited {
   text-decoration: none;
@@ -160,6 +187,10 @@ html, body, #root {
   display: flex;
   align-items: center; }
 
+@media only screen and (max-width: 42.5em) {
+  .control__input-container, .control__input-container--dark {
+    flex-direction: column; } }
+
 .control__panel-container {
   position: relative; }
 
@@ -172,16 +203,32 @@ html, body, #root {
 .control__input-container--dark--input {
   width: 65%; }
 
+@media only screen and (max-width: 42.5em) {
+  .control__input-container--dark--input {
+    width: 100%; } }
+
 .control__input-container--dark--radio {
   width: 35%;
   margin-bottom: 28px; }
 
+@media only screen and (max-width: 42.5em) {
+  .control__input-container--dark--radio {
+    width: 100%; } }
+
 .control__input-container--input {
   width: 65%; }
+
+@media only screen and (max-width: 42.5em) {
+  .control__input-container--input {
+    width: 100%; } }
 
 .control__input-container--radio {
   width: 35%;
   margin-bottom: 28px; }
+
+@media only screen and (max-width: 42.5em) {
+  .control__input-container--radio {
+    width: 100%; } }
 
 .code-block, .code-block--dark {
   padding: 10px;
@@ -259,6 +306,10 @@ pre {
   white-space: pre-wrap;
   overflow-x: auto; }
 
+@media only screen and (max-width: 27.5em) {
+  pre {
+    padding: 8px; } }
+
 .button {
   padding: 12px 18px;
   border-radius: 8px;
@@ -269,6 +320,10 @@ pre {
   font-size: 16px;
   outline: none; }
 
+@media only screen and (max-width: 27.5em) {
+  .button {
+    padding: 16px; } }
+
 .button:hover {
   cursor: pointer; }
 
@@ -278,6 +333,10 @@ pre {
 .button__primary {
   min-width: 120px;
   background-color: #F5F5F5; }
+
+@media only screen and (max-width: 27.5em) {
+  .button__primary {
+    min-width: 0%; } }
 
 .button__primary:hover {
   box-shadow: 0px 4px 20px -5px rgba(68, 68, 68, 0.753);
@@ -293,6 +352,10 @@ pre {
   min-width: 120px;
   background-color: #272727;
   color: white; }
+
+@media only screen and (max-width: 27.5em) {
+  .button__primary--dark {
+    min-width: 0%; } }
 
 .button__primary--dark:hover {
   box-shadow: 0px 4px 20px -5px rgba(68, 68, 68, 0.753);
@@ -398,6 +461,14 @@ pre {
 
 .button__icon {
   margin-right: 10px; }
+
+@media only screen and (max-width: 27.5em) {
+  .button__icon {
+    margin-right: 0px; } }
+
+@media only screen and (max-width: 27.5em) {
+  .button__text {
+    display: none; } }
 
 .input-field__input, .input-field__input--dark, .input-field__input--dark--error, .input-field__input--error {
   padding: 14px 20px;
