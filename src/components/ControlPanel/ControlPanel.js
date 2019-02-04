@@ -32,8 +32,7 @@ const ControlPanel = props => {
           } 
           else {
             if(characters[i] === ' ' && !messageCharacters.includes('white space')){
-              characters.splice(i, 1, 'white space')
-              console.log(characters[i]);
+              characters.splice(i, 1, 'white space');
             }
             messageCharacters.push(characters[i]);
             illegalCharacterMessage = 'Illegal characters used: ' + messageCharacters.join(" ") + '  ';

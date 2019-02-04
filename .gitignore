@@ -4,10 +4,12 @@
 /node_modules
 /.pnp
 .pnp.js
-
+now.json
+feedback.md
 
 #ignore all .css files
 /src/*.css
+index.css
 
 # testing
 /coverage

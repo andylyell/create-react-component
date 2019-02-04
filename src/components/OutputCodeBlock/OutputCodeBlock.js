@@ -32,7 +32,7 @@ const ${props.inputValue} = (props) => {
     );
 }
             
-export default Component;`; break;
+export default ${props.inputValue};`; break;
             case('class-option'): codeSnippet = `Import React from 'react';
 
 class ${props.inputValue} extends React.component {
@@ -43,7 +43,7 @@ class ${props.inputValue} extends React.component {
     };
 };
             
-export default Component;`; break;
+export default ${props.inputValue};`; break;
 
 default: codeSnippet = `Import React from 'react';
 
@@ -53,7 +53,7 @@ default: codeSnippet = `Import React from 'react';
             );
         }
                     
-        export default Component;`; break;}
+        export default ${props.inputValue};`; break;}
         } 
 
 let resetCheck = null;
@@ -66,12 +66,37 @@ if(props.inputValidation.illegalCharactersPresent){
     copyCheck = true;
 }
 
-const copyToClipboard = _ => {
-    if(!copyCheck){
-        console.log('click')
-        navigator.clipboard.writeText(codeSnippet);
+const fallBackCopy = _ => {
+    let textArea = document.createElement("textarea");
+    textArea.value = codeSnippet;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+  
+    try {
+      let successful = document.execCommand('copy');
+      let msg = successful ? 'successful' : 'unsuccessful';
+      console.log('Fallback: Copying text command was ' + msg);
+    } catch (err) {
+      console.error('Fallback: Oops, unable to copy', err);
     }
+  
+    document.body.removeChild(textArea);
 }
+
+const copyToClipboard = _ => {
+    if (!navigator.clipboard) {
+        fallBackCopy();
+        return;
+    }
+    navigator.clipboard.writeText(codeSnippet).then(function() {
+        console.log('Async: Copying to clipboard was successful!');
+    }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+    });
+}
+
+
     return (
         <div className={codeStyle}>
 
