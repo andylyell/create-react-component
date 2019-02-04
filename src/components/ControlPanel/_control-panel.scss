@@ -1,3 +1,10 @@
+%input-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
 .control{
 
     &__panel-container{
@@ -9,9 +16,18 @@
     }
 
     &__input-container{
-        width: 100%;
-        display: flex;
-        align-items: center;
+        @extend %input-container;
+        &--dark{
+            @extend %input-container;
+            color: white;
+            &--input{
+                width: 65%;
+            }
+            &--radio{
+                width: 35%;
+                margin-bottom: 28px;
+            }
+        }
 
         &--input{
             width: 65%;

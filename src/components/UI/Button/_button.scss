@@ -85,10 +85,29 @@
     }
 
     &__secondary--dark{
-        background-color: salmon;
+        background-color: $blue--1;
         color: white;
         & .button__icon{
             fill: white;
+        }
+
+        &:hover:enabled{
+            box-shadow: 0px 4px 20px -5px rgba(11, 17, 31, 0.753);
+            transform: translateY(-2px);
+        }
+
+        &:active:enabled{
+            transform: translateY(1px);
+        }
+
+        &:disabled{
+            background-color: $dgrey--2;
+            color: $dgrey--3;
+            cursor: not-allowed;
+
+            & .button__icon{
+                fill: $dgrey--3;
+            }
         }
     }
 
@@ -122,11 +141,31 @@
     }
 
     &__tertiary--dark{
-        background-color: palegreen;
-        color: $grey--3;
+        background-color: transparent;
+        box-shadow: inset 0px 0px 0px 1px $blue--1;
+        color: $blue--1;
 
         & .button__icon{
-            fill: $grey--3;
+            fill: $blue--1;
+        }
+
+        &:hover:enabled .button__icon{
+            animation-name: spin;
+            animation-duration: 4000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform-origin: 50% 49%;
+        }
+
+        &:disabled{
+            box-shadow: inset 0px 0px 0px 0px $blue--1;
+            background-color: $dgrey--2;
+            color: $dgrey--3;
+            cursor: not-allowed;
+
+            & .button__icon{
+                fill: $dgrey--3;
+            }
         }
     }
 

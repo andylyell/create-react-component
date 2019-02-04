@@ -136,7 +136,7 @@ html, body, #root {
   border-bottom: 1px solid white; }
 
 .info-block__container {
-  max-width: 650px; }
+  width: 650px; }
 
 .info-block__title {
   margin-bottom: 20px; }
@@ -155,16 +155,26 @@ html, body, #root {
 .info-block__text--dark {
   color: #e9e9e9; }
 
+.control__input-container, .control__input-container--dark {
+  width: 100%;
+  display: flex;
+  align-items: center; }
+
 .control__panel-container {
   position: relative; }
 
 .control__button-container {
   display: flex; }
 
-.control__input-container {
-  width: 100%;
-  display: flex;
-  align-items: center; }
+.control__input-container--dark {
+  color: white; }
+
+.control__input-container--dark--input {
+  width: 65%; }
+
+.control__input-container--dark--radio {
+  width: 35%;
+  margin-bottom: 28px; }
 
 .control__input-container--input {
   width: 65%; }
@@ -173,13 +183,25 @@ html, body, #root {
   width: 35%;
   margin-bottom: 28px; }
 
-.code-block {
-  background: linear-gradient(to bottom, #3f3f3f 0%, #383838 33%, #262626 100%);
+.code-block, .code-block--dark {
   padding: 10px;
   color: white;
   border-radius: 12px;
-  box-shadow: 0px 0px 50px -10px #787878;
-  position: relative; }
+  position: relative;
+  transition: .3s; }
+
+.code-block__code, .code-block__code--dark {
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 24px; }
+
+.code-block {
+  background: linear-gradient(to bottom, #3f3f3f 0%, #383838 33%, #262626 100%);
+  box-shadow: 0px 0px 50px -10px #787878; }
+
+.code-block--dark {
+  background: linear-gradient(to bottom, white 0%, #ebebeb 33%, #d4d4d4 100%);
+  box-shadow: 0px 0px 50px -10px #242424; }
 
 .code-block__button-container {
   display: flex;
@@ -212,10 +234,10 @@ html, body, #root {
   background-color: #00c732; }
 
 .code-block__code {
-  font-family: monospace;
-  font-size: 16px;
-  line-height: 24px;
   color: #dbdbdb; }
+
+.code-block__code--dark {
+  color: #262626; }
 
 .code-block__code-comment {
   font-family: monospace;
@@ -305,11 +327,26 @@ pre {
   fill: #3A3A3F; }
 
 .button__secondary--dark {
-  background-color: salmon;
+  background-color: #008CE9;
   color: white; }
 
 .button__secondary--dark .button__icon {
   fill: white; }
+
+.button__secondary--dark:hover:enabled {
+  box-shadow: 0px 4px 20px -5px rgba(11, 17, 31, 0.753);
+  transform: translateY(-2px); }
+
+.button__secondary--dark:active:enabled {
+  transform: translateY(1px); }
+
+.button__secondary--dark:disabled {
+  background-color: #c7c7c7;
+  color: #9e9e9e;
+  cursor: not-allowed; }
+
+.button__secondary--dark:disabled .button__icon {
+  fill: #9e9e9e; }
 
 .button__tertiary {
   background-color: transparent;
@@ -336,14 +373,38 @@ pre {
   fill: #3A3A3F; }
 
 .button__tertiary--dark {
-  background-color: palegreen;
-  color: #3A3A3F; }
+  background-color: transparent;
+  box-shadow: inset 0px 0px 0px 1px #008CE9;
+  color: #008CE9; }
 
 .button__tertiary--dark .button__icon {
-  fill: #3A3A3F; }
+  fill: #008CE9; }
+
+.button__tertiary--dark:hover:enabled .button__icon {
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: 50% 49%; }
+
+.button__tertiary--dark:disabled {
+  box-shadow: inset 0px 0px 0px 0px #008CE9;
+  background-color: #c7c7c7;
+  color: #9e9e9e;
+  cursor: not-allowed; }
+
+.button__tertiary--dark:disabled .button__icon {
+  fill: #9e9e9e; }
 
 .button__icon {
   margin-right: 10px; }
+
+.input-field__input, .input-field__input--dark, .input-field__input--dark--error, .input-field__input--error {
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none; }
 
 .input-field {
   display: flex;
@@ -360,12 +421,26 @@ pre {
   top: 44px;
   right: 20px; }
 
-.input-field .input-field__input, .input-field .input-field__input--error {
-  padding: 14px 20px;
-  border-radius: 8px;
-  border: 1px solid #dadada;
-  font-size: 16px;
-  margin-bottom: 10px; }
+.input-field__input {
+  border: 1px solid #dadada; }
+
+.input-field__input--dark {
+  border: 1px solid #424242;
+  background-color: #1d1d1d;
+  color: white; }
+
+.input-field__input--dark--error {
+  color: white;
+  background-color: #1d1d1d;
+  border: 1px solid #c50031; }
+
+.input-field__input--dark--error:focus {
+  border: 1px solid #c50031;
+  outline: none; }
+
+.input-field__input--dark:focus {
+  outline: none;
+  border: 1px solid #008CE9; }
 
 .input-field__input--error {
   border: 1px solid #c50031; }
@@ -399,8 +474,7 @@ pre {
   height: 0;
   width: 0; }
 
-/* Customize the label (the container) */
-.container {
+.container, .container--dark {
   display: block;
   position: relative;
   padding-left: 40px;
@@ -408,6 +482,16 @@ pre {
   font-size: 16px;
   user-select: none; }
 
+.checkmark, .checkmark--dark {
+  position: absolute;
+  top: -3px;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  transition: .3s; }
+
+/* Customize the label (the container) */
 /* Hide the browser's default radio button */
 .container input {
   position: absolute;
@@ -416,17 +500,21 @@ pre {
   height: 0;
   width: 0; }
 
+.container--dark input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0; }
+
 /* Create a custom radio button */
 .checkmark {
-  position: absolute;
-  top: -3px;
-  left: 0;
-  height: 24px;
-  width: 24px;
   background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  transition: .3s; }
+  border: 1px solid #ccc; }
+
+.checkmark--dark {
+  background-color: #1d1d1d;
+  border: 1px solid #424242; }
 
 .label {
   margin-right: 30px;
@@ -437,8 +525,14 @@ pre {
 .container:hover input ~ .checkmark {
   border: 1px solid #2196F3; }
 
+.container--dark:hover input ~ .checkmark--dark {
+  border: 1px solid #2196F3; }
+
 /* When the radio button is checked, add a blue background */
 .container input:checked ~ .label {
+  color: #2196F3; }
+
+.container--dark input:checked ~ .label {
   color: #2196F3; }
 
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -447,12 +541,29 @@ pre {
   position: absolute;
   display: none; }
 
+.checkmark--dark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
 /* Show the indicator (dot/circle) when checked */
 .container input:checked ~ .checkmark:after {
   display: block; }
 
+/* Show the indicator (dot/circle) when checked */
+.container--dark input:checked ~ .checkmark--dark:after {
+  display: block; }
+
 /* Style the indicator (dot/circle) */
 .container .checkmark:after {
+  top: 5px;
+  left: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2196F3; }
+
+.container--dark .checkmark--dark:after {
   top: 5px;
   left: 5px;
   width: 14px;

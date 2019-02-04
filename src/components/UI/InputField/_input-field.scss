@@ -1,3 +1,12 @@
+%standard-input{
+    padding: 14px 20px;
+    border-radius: $border--radius;
+    font-size: 16px;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+
 .input-field{
     display: flex;
     flex-direction: column;
@@ -15,16 +24,31 @@
         right: 20px;
     }
 
-    %standard-input{
-        padding: 14px 20px;
-        border-radius: $border--radius;
-        border: 1px solid $grey--4;
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-
     &__input{
         @extend %standard-input;
+        border: 1px solid $grey--4;
+        
+
+        &--dark{
+        @extend %standard-input;
+        border: 1px solid #424242;
+        background-color: $lgrey--2;
+        color: white;
+            &--error{
+                @extend %standard-input;
+                color: white;
+                background-color: $lgrey--2;
+                border: 1px solid #c50031;
+                &:focus{
+                    border: 1px solid #c50031;
+                    outline: none;
+                }
+            }
+            &:focus{
+                outline: none;
+                border: 1px solid $blue--1;
+            }
+        }
 
         &--error{
             @extend %standard-input;

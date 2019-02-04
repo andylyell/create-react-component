@@ -33,7 +33,7 @@ const InfoBlock = (props) => {
             <div className={infoStyle}>
                 <div className="info-block__container">
                 <h1 className={infoStyleTitle}>Create, copy and use React <br/> components in a few seconds.</h1>
-                    <p className={infoStyleText}>Oh, that's Million Ants. I can't see the ants from over here, I just assumed that was um.. Turd Man, Wiggly Turd Man.</p>
+                    <p className={infoStyleText}>Use this simple tool to quickly create your own custom react components ready for use.</p>
                 </div>  
             </div>
         </>

@@ -1,7 +1,19 @@
 import React from 'react';
 import Button from '../UI/Button/Button';
+import { addDarkClass, removeDarkClass } from '../../helpers/helpers';
 
 const OutputCodeBlock = (props) => {
+
+
+let codeStyle = 'code-block'
+let codeStyleCode = 'code-block__code';
+if(props.colorMode){
+    codeStyle = removeDarkClass(codeStyle);
+    codeStyleCode = removeDarkClass(codeStyleCode);
+} else{
+    codeStyle = addDarkClass(codeStyle);
+    codeStyleCode = addDarkClass(codeStyleCode);
+}
 
     
     let codeSnippet = `//enter a component`
@@ -51,7 +63,7 @@ const copyToClipboard = _ => {
     }
 }
     return (
-        <div className="code-block">
+        <div className={codeStyle}>
 
             <div className="code-block__button-container">
                 <Button disabled={resetCheck} clicked={props.resetInput} btnType="tertiary" icon="reset" colorMode={props.colorMode}>Reset</Button>
@@ -67,7 +79,7 @@ const copyToClipboard = _ => {
             </div>
             
             <pre>
-                <code className="code-block__code">
+                <code className={codeStyleCode}>
                     {codeSnippet}
                 </code>
             </pre> 

@@ -4,13 +4,30 @@
 
 $button-radius: 10px;
 
-.code-block{
-    background: linear-gradient(to bottom, #3f3f3f 0%,#383838 33%,#262626 100%);
+%code-block-extender{
     padding: 10px;
     color: white;
     border-radius: 12px;
-    box-shadow: 0px 0px 50px -10px rgba(120,120,120,1);
     position: relative;
+    transition: .3s;
+}
+
+%code-style{
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.code-block{
+    @extend %code-block-extender;
+    background: linear-gradient(to bottom, #3f3f3f 0%,#383838 33%,#262626 100%);
+    box-shadow: 0px 0px 50px -10px rgba(120,120,120,1);
+
+    &--dark{
+        @extend %code-block-extender;
+        background: linear-gradient(to bottom, white 0%,#ebebeb 33%,#d4d4d4 100%);
+        box-shadow: 0px 0px 50px -10px rgb(36, 36, 36);
+    }
 
     &__button-container{
         display: flex;
@@ -47,10 +64,12 @@ $button-radius: 10px;
     }
 
     &__code{
-        font-family: monospace;
-        font-size: 16px;
-        line-height: 24px;
+        @extend %code-style;
         color: #dbdbdb;
+        &--dark{
+            @extend %code-style;
+            color: #262626;
+        }
     }
 
     &__code-comment{

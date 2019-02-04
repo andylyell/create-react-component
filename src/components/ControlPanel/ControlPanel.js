@@ -2,8 +2,18 @@ import React from "react";
 import InputField from "../UI/InputField/InputField";
 import ChoiceToggle from "../UI/ChoiceToggle/ChoiceToggle";
 import InfoMessage from "../UI/InfoMessage/InfoMessage";
+import { addDarkClass, removeDarkClass } from "../../helpers/helpers";
 
 const ControlPanel = props => {
+
+    let controlStyleContainer = 'control__input-container';
+    if(props.colorMode){
+      controlStyleContainer = removeDarkClass(controlStyleContainer);
+    } else {
+      controlStyleContainer = addDarkClass(controlStyleContainer);
+    }
+
+
 
     let error = null;
     let info = null;
@@ -37,10 +47,11 @@ const ControlPanel = props => {
 
   return (
       <div className="control__panel-container">
-        <div className="control__input-container">
+        <div className={controlStyleContainer}>
           <div className="control__input-container--input">
           {info}
             <InputField
+              colorMode={props.colorMode}
               inputChange={props.inputChange}
               inputValue={props.inputValue}
               inputValidation={props.inputValidation}
@@ -48,6 +59,7 @@ const ControlPanel = props => {
           </div>
           <div className="control__input-container--radio">
             <ChoiceToggle
+              colorMode={props.colorMode}
               radioOption={props.radioOption}
               radioOptionChange={props.radioOptionChange}
             />
