@@ -12,9 +12,7 @@ const ControlPanel = props => {
     } else {
       controlStyleContainer = addDarkClass(controlStyleContainer);
     }
-
-
-
+    
     let error = null;
     let info = null;
     let lengthCheck = !props.inputValidation.tooLong ? true : false;
