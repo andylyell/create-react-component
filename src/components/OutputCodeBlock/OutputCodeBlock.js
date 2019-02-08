@@ -24,7 +24,7 @@ if(props.colorMode){
 
 
         switch(props.radioOption){
-            case('function-option'): codeSnippet = `Import React from 'react';
+            case('function-option'): codeSnippet = `import React from 'react';
 
 const ${props.inputValue} = (props) => {
     return (
@@ -35,7 +35,7 @@ const ${props.inputValue} = (props) => {
 export default ${props.inputValue};`; break;
             case('class-option'): codeSnippet = `Import React from 'react';
 
-class ${props.inputValue} extends React.component {
+class ${props.inputValue} extends React.Component {
     render(){
         return (
             <h1>This is the ${props.inputValue} component</h1>
@@ -45,7 +45,7 @@ class ${props.inputValue} extends React.component {
             
 export default ${props.inputValue};`; break;
 
-default: codeSnippet = `Import React from 'react';
+default: codeSnippet = `import React from 'react';
 
         const ${props.inputValue} = (props) => {
             return (
